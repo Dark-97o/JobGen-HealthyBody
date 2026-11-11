@@ -11,7 +11,7 @@ export const FaqView: React.FC<FaqViewProps> = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <div className="pt-32 pb-24 sm:pt-40 sm:pb-32 bg-[#FAF8F5]">
+    <div className="pt-32 pb-24 sm:pt-40 sm:pb-32 bg-[#F8F9FB]">
       <div className="max-w-4xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <motion.div
@@ -29,7 +29,7 @@ export const FaqView: React.FC<FaqViewProps> = () => {
               patient questions
             </span>
           </h1>
-          <p className="mt-6 text-base text-slate-600 font-light leading-relaxed">
+          <p className="mt-6 text-base text-healis-grey font-normal leading-relaxed">
             Everything you need to know about your consultation, health fund rebates, private billing, and what to expect during your care.
           </p>
         </motion.div>
@@ -41,15 +41,17 @@ export const FaqView: React.FC<FaqViewProps> = () => {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-3xl border border-black/5 p-6 transition-all shadow-sm"
+                className="bg-white rounded-[2rem] border border-black/5 p-6 sm:p-7 transition-all shadow-sm hover:shadow-md"
               >
                 <button
                   type="button"
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full text-left flex items-center justify-between gap-4 text-base sm:text-lg font-light text-slate-900 hover:text-forest-800 transition-colors"
+                  className="w-full text-left flex items-center justify-between gap-4 text-base sm:text-lg font-medium text-healis-dark hover:text-healis-blue transition-colors"
                 >
-                  <span className="font-medium">{faq.q}</span>
-                  <div className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center flex-shrink-0 text-slate-600">
+                  <span>{faq.q}</span>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${
+                    isOpen ? 'bg-healis-blue text-white' : 'bg-stone-100 text-slate-600'
+                  }`}>
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
                 </button>
@@ -63,7 +65,7 @@ export const FaqView: React.FC<FaqViewProps> = () => {
                       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="pt-4 text-sm text-slate-600 font-light leading-relaxed border-t border-slate-100 mt-4">
+                      <p className="pt-4 text-sm text-healis-grey font-normal leading-relaxed border-t border-slate-100 mt-4">
                         {faq.a}
                       </p>
                     </motion.div>
@@ -75,16 +77,16 @@ export const FaqView: React.FC<FaqViewProps> = () => {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-14 p-8 rounded-3xl bg-[#F3EFEA] border border-black/5 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div className="mt-14 p-8 rounded-[2.5rem] bg-white border border-black/5 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div>
-            <h3 className="text-xl font-medium text-slate-900">Have a specific clinical question?</h3>
-            <p className="text-xs text-slate-600 font-light mt-1">
+            <h3 className="text-xl font-medium text-healis-dark">Have a specific clinical question?</h3>
+            <p className="text-xs text-healis-grey font-normal mt-1">
               Speak directly with our clinic patient care coordinators across our 4 practices.
             </p>
           </div>
           <a
             href="tel:0247225555"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-forest-900 hover:bg-forest-950 text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-pill bg-healis-blue hover:bg-black text-white text-xs font-medium tracking-normal transition-all shadow-sm hover:scale-[0.98]"
           >
             <Phone className="w-3.5 h-3.5" />
             <span>Call (02) 4722 5555</span>
