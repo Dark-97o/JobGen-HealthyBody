@@ -12,14 +12,14 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
   onExploreServices,
 }) => {
   return (
-    <section className="relative min-h-screen flex items-center pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-44 lg:pb-28 bg-[#F8F9FB] overflow-hidden">
-      {/* Brand Red Half Semi-Circle on the Left Edge - Sized so it never clips or overlaps the headline */}
+    <section className="relative min-h-screen flex items-center pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-56 lg:pb-28 bg-[#F8F9FB] overflow-x-clip">
+      {/* Brand Red Half Semi-Circle on the Left Edge - Perfectly proportioned geometric half semi-circle sized so it never goes behind the headline */}
       <div
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-28 sm:w-12 sm:h-40 lg:w-16 lg:h-52 rounded-r-full bg-[#E53935] pointer-events-none z-0 shadow-md opacity-90"
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-4 sm:w-5 lg:w-7 h-8 sm:h-10 lg:h-14 rounded-r-full bg-[#E53935] pointer-events-none z-0 shadow-sm"
         aria-hidden="true"
       />
 
-      <div className="max-w-[1340px] w-full mx-auto px-6 sm:px-8 relative z-10">
+      <div className="max-w-[1340px] w-full mx-auto px-6 sm:px-10 lg:pl-16 lg:pr-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Column: Headline, Info, & Action Buttons */}
