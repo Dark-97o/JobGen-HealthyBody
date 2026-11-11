@@ -63,41 +63,27 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
             </div>
           </motion.div>
 
-          {/* Right Column: 4 Individual Cards - Dedicated wrapper ensuring -120px vertical shift is strictly applied */}
-          <div className="lg:col-span-7 mt-8 lg:mt-0 lg:-translate-y-[120px]">
+          {/* Right Column: 4 Individual Cards - Moved up by 50px on desktop */}
+          <div className="lg:col-span-7 mt-8 lg:mt-0 lg:-translate-y-[20px]">
             <motion.div
               initial={{ opacity: 0, scale: 0.96, x: 20 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             >
-              {/* 4 Cards in 2x2 grid (reduced by 10px each) with pointed corners & interactive central locator circle */}
+              {/* 4 Cards in 2x2 grid (increased by 10px each, flat / no shadow) with pointed corners & interactive central locator circle */}
               <div
                 className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.06] origin-top"
                 onMouseLeave={() => setShowLocations(false)}
               >
-                {/* Center White Circle with Looping Growing/Shrinking & Color Changing Locator Icon */}
+                {/* Center White Circle with Looping Growing/Shrinking & Color Changing Locator Icon - No outer ring, no shadow, no text pill */}
                 <div
                   onMouseEnter={() => setShowLocations(true)}
                   onClick={() => setShowLocations((prev) => !prev)}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer hidden sm:flex flex-col items-center justify-center group"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer hidden sm:flex items-center justify-center group"
                   title="Hover or click to switch cards to all 4 Sydney clinic locations"
                 >
-                  {/* Looping pulse radar ring */}
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.45, 1],
-                      opacity: [0.45, 0, 0.45],
-                    }}
-                    transition={{
-                      duration: 2.8,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                    }}
-                    className="absolute -inset-3 rounded-full border-2 border-healis-blue pointer-events-none"
-                  />
-
-                  {/* Main White Circle */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full shadow-[0_14px_45px_rgba(0,0,0,0.22)] border-[5px] border-[#F8F9FB] flex items-center justify-center transition-transform duration-300 group-hover:scale-110 active:scale-95">
+                  {/* Main White Circle - Flat / No Shadow */}
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full border-4 border-slate-200/90 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 active:scale-95 shadow-none">
                     {/* Locator Icon that grows, shrinks, and changes color in a continuous loop */}
                     <motion.div
                       animate={{
@@ -114,15 +100,10 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                       <MapPin className="w-8 h-8 sm:w-9 sm:h-9 stroke-[2.3]" />
                     </motion.div>
                   </div>
-
-                  {/* Micro Hint Pill */}
-                  <div className="absolute -bottom-6 bg-[#111111]/90 backdrop-blur-sm text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full whitespace-nowrap shadow-md pointer-events-none transition-all duration-200 group-hover:bg-healis-blue">
-                    {showLocations ? '4 Clinics Active' : 'Hover for 4 Clinics'}
-                  </div>
                 </div>
 
                 {/* Card 1 (Top-Left): Sports Physio <-> Penrith Flagship */}
-                <div className="rounded-none overflow-hidden bg-slate-100 shadow-lg border-2 border-white min-h-[250px] sm:min-h-[290px] h-[250px] sm:h-[290px] relative group">
+                <div className="rounded-none overflow-hidden bg-slate-100 border-2 border-white min-h-[260px] sm:min-h-[300px] h-[260px] sm:h-[300px] relative group shadow-none">
                   <AnimatePresence mode="wait">
                     {!showLocations ? (
                       <motion.div
@@ -195,7 +176,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                 </div>
 
                 {/* Card 2 (Top-Right): Vibrant Green Card <-> Caringbah */}
-                <div className="rounded-none bg-[#7DBE47] text-white shadow-lg border-2 border-white min-h-[250px] sm:min-h-[290px] h-[250px] sm:h-[290px] relative overflow-hidden group">
+                <div className="rounded-none bg-[#7DBE47] text-white border-2 border-white min-h-[260px] sm:min-h-[300px] h-[260px] sm:h-[300px] relative overflow-hidden group shadow-none">
                   <AnimatePresence mode="wait">
                     {!showLocations ? (
                       <motion.div
@@ -283,7 +264,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                 </div>
 
                 {/* Card 3 (Bottom-Left): Vibrant Cyan Card <-> Jordan Springs */}
-                <div className="rounded-none bg-[#00B4D8] text-white shadow-lg border-2 border-white min-h-[250px] sm:min-h-[290px] h-[250px] sm:h-[290px] relative overflow-hidden group">
+                <div className="rounded-none bg-[#00B4D8] text-white border-2 border-white min-h-[260px] sm:min-h-[300px] h-[260px] sm:h-[300px] relative overflow-hidden group shadow-none">
                   <AnimatePresence mode="wait">
                     {!showLocations ? (
                       <motion.div
@@ -370,7 +351,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                 </div>
 
                 {/* Card 4 (Bottom-Right): Red Uniform Card <-> Mount Annan */}
-                <div className="rounded-none overflow-hidden bg-slate-100 shadow-lg border-2 border-white min-h-[250px] sm:min-h-[290px] h-[250px] sm:h-[290px] relative group">
+                <div className="rounded-none overflow-hidden bg-slate-100 border-2 border-white min-h-[260px] sm:min-h-[300px] h-[260px] sm:h-[300px] relative group shadow-none">
                   <AnimatePresence mode="wait">
                     {!showLocations ? (
                       <motion.div

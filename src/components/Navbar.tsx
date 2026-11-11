@@ -98,12 +98,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             <img
               src="https://www.thehealthybodycompany.com.au/wp-content/themes/thbc/static/images/thbc-logo-blue.png"
               alt="The Healthy Body Company"
-              className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
             />
           </button>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-7 text-xs font-medium tracking-normal text-healis-grey">
+          <div className="hidden lg:flex items-center gap-8 text-sm lg:text-[15px] font-medium tracking-normal text-healis-grey">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -132,10 +132,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               type="button"
               onClick={onOpenBooking}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-pill bg-healis-blue hover:bg-black text-white text-xs font-medium tracking-normal transition-all duration-300 hover:scale-[0.975] active:scale-95 shadow-sm"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-pill bg-healis-blue hover:bg-black text-white text-sm font-medium tracking-normal transition-all duration-300 hover:scale-[0.975] active:scale-95 shadow-sm"
             >
               <span>Contact</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-4 h-4" />
             </button>
           </div>
 
