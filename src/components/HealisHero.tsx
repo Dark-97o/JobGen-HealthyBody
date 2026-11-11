@@ -13,9 +13,9 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
 }) => {
   return (
     <section className="relative min-h-screen flex items-center pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-44 lg:pb-28 bg-[#F8F9FB] overflow-hidden">
-      {/* Brand Red Half Semi-Circle on the Left Edge */}
+      {/* Brand Red Half Semi-Circle on the Left Edge - Sized so it never clips or overlaps the headline */}
       <div
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-44 h-88 sm:w-60 sm:h-[480px] lg:w-72 lg:h-[580px] rounded-r-full bg-[#E53935] pointer-events-none z-0 shadow-2xl opacity-90"
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-28 sm:w-12 sm:h-40 lg:w-16 lg:h-52 rounded-r-full bg-[#E53935] pointer-events-none z-0 shadow-md opacity-90"
         aria-hidden="true"
       />
 
@@ -62,14 +62,14 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
             </div>
           </motion.div>
 
-          {/* Right Column: 4 Individual Cards - Positioned safely below the navbar */}
+          {/* Right Column: 4 Individual Cards - Moved up by 120px on desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 mt-8 lg:mt-0 pt-2 lg:pt-6"
+            className="lg:col-span-7 mt-8 lg:mt-0 lg:-translate-y-[120px]"
           >
-            {/* 20% larger cards in a 2x2 grid with pointed (sharp) corners - origin-top ensures cards never creep up behind the nav */}
+            {/* 20% larger cards in a 2x2 grid with pointed (sharp) corners - origin-top ensures cards scale cleanly */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.06] origin-top">
               
               {/* Card 1 (Top-Left): Sports Physio Image Card (previously bottom-right) - Pointed Corners */}
