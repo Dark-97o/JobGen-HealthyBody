@@ -7,7 +7,7 @@ export const BlogView: React.FC = () => {
   const [activePost, setActivePost] = useState<RealBlogPost | null>(null);
 
   return (
-    <div className="pt-32 pb-24 sm:pt-40 sm:pb-32 bg-[#FAF8F5]">
+    <div className="pt-32 pb-24 sm:pt-40 sm:pb-32 bg-[#F8F9FB]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <motion.div
@@ -39,7 +39,7 @@ export const BlogView: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-white rounded-3xl overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between group"
+              className="bg-white rounded-[2rem] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between group"
             >
               <div>
                 <div className="aspect-[16/10] overflow-hidden bg-slate-100">
@@ -51,7 +51,7 @@ export const BlogView: React.FC = () => {
                 </div>
 
                 <div className="p-6 space-y-2.5">
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-forest-700 flex items-center justify-between">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-healis-blue flex items-center justify-between">
                     <span>{post.category}</span>
                     <span className="flex items-center gap-1 text-slate-400 font-normal">
                       <Clock className="w-3 h-3" />
@@ -63,7 +63,7 @@ export const BlogView: React.FC = () => {
                     {post.title}
                   </h3>
 
-                  <p className="text-xs text-slate-600 font-light leading-relaxed line-clamp-3">
+                  <p className="text-xs text-healis-grey font-normal leading-relaxed line-clamp-3">
                     {post.excerpt}
                   </p>
                 </div>
@@ -73,7 +73,7 @@ export const BlogView: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setActivePost(post)}
-                  className="w-full pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-900 group-hover:text-forest-800 transition-colors"
+                  className="w-full pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-healis-dark group-hover:text-healis-blue transition-colors"
                 >
                   <span>Read Full Article</span>
                   <ArrowUpRight className="w-4 h-4" />

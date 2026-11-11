@@ -23,9 +23,12 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 space-y-6 text-left"
           >
-            {/* Main Headline on the Left - Made 8px bigger and bold */}
-            <h1 className="text-[44px] sm:text-[56px] lg:text-[68px] font-bold text-healis-dark tracking-tight leading-[1.06]">
-              The Healthy Body <span className="text-healis-blue">Company</span>
+            {/* Main Headline on the Left - 4 lines, one word each, ALL CAPS */}
+            <h1 className="text-[44px] sm:text-[56px] lg:text-[68px] font-bold text-healis-dark tracking-tight leading-[0.95] uppercase select-none">
+              <span className="block">THE</span>
+              <span className="block">HEALTHY</span>
+              <span className="block">BODY</span>
+              <span className="block text-healis-blue">COMPANY</span>
             </h1>
 
             {/* Supporting Micro-copy */}

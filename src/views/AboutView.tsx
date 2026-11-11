@@ -36,7 +36,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
   ];
 
   return (
-    <div className="pt-32 pb-24 sm:pt-40 sm:pb-32 bg-[#FAF8F5]">
+    <div className="pt-32 pb-24 sm:pt-40 sm:pb-32 bg-[#F8F9FB]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-24">
         {/* Header */}
         <motion.div
@@ -100,12 +100,12 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
             {values.map((v, i) => {
               const Icon = v.icon;
               return (
-                <div key={i} className="bg-white rounded-3xl p-6 border border-black/5 shadow-sm space-y-3">
-                  <div className="w-10 h-10 rounded-2xl bg-forest-50 text-forest-800 flex items-center justify-center">
+                <div key={i} className="bg-white rounded-[2rem] p-6 border border-black/5 shadow-sm space-y-3">
+                  <div className="w-10 h-10 rounded-2xl bg-healis-blue/10 text-healis-blue flex items-center justify-center">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900">{v.title}</h3>
-                  <p className="text-xs text-slate-600 font-light leading-relaxed">{v.desc}</p>
+                  <h3 className="text-lg font-medium text-healis-dark">{v.title}</h3>
+                  <p className="text-xs text-healis-grey font-normal leading-relaxed">{v.desc}</p>
                 </div>
               );
             })}
@@ -113,17 +113,17 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-forest-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
-          <div>
-            <h3 className="text-2xl font-light">Experience the difference in person</h3>
-            <p className="text-xs sm:text-sm text-emerald-200/80 font-light mt-1">
+        <div className="p-8 sm:p-12 rounded-[2.5rem] bg-healis-dark text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
+          <div className="relative z-10">
+            <h3 className="text-2xl font-normal">Experience the difference in person</h3>
+            <p className="text-xs sm:text-sm text-slate-300 font-normal mt-1">
               Initial sessions are 45 minutes of thorough assessment and hands-on therapy.
             </p>
           </div>
           <button
             type="button"
             onClick={onOpenBooking}
-            className="px-8 py-4 rounded-full bg-white text-slate-900 font-semibold text-xs tracking-wider uppercase hover:bg-stone-100 transition-colors flex items-center gap-2 flex-shrink-0"
+            className="px-8 py-4 rounded-pill bg-healis-blue text-white font-medium text-xs tracking-normal hover:bg-black transition-all flex items-center gap-2 flex-shrink-0 relative z-10 shadow-md hover:scale-[0.98]"
           >
             <span>Book Appointment</span>
             <ArrowUpRight className="w-4 h-4" />
