@@ -181,7 +181,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
                   <div className="bg-white p-2.5 rounded-xl border border-black/5 text-xs text-right space-y-0.5">
                     <div className="text-slate-500 text-[10px]">Standard Consult: ${standardFee}</div>
-                    <div className="text-emerald-700 font-semibold text-[11px]">
+                    <div className="text-healis-blue font-semibold text-[11px]">
                       Est. Rebate: -${rebate}
                     </div>
                     <div className="font-bold text-slate-900 border-t border-slate-100 pt-1 text-xs">
@@ -194,7 +194,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               <button
                 type="button"
                 onClick={handleNext}
-                className="w-full py-3.5 rounded-full bg-forest-900 hover:bg-forest-950 text-white text-xs font-semibold tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-md"
+                className="w-full py-3.5 rounded-pill bg-healis-blue hover:bg-black text-white text-xs font-medium tracking-normal transition-all flex items-center justify-center gap-2 shadow-md hover:scale-[0.98]"
               >
                 <span>Continue to Patient Details</span>
                 <ArrowRight className="w-4 h-4" />
@@ -222,7 +222,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       onClick={() => setTimeSlot(slot)}
                       className={`p-2.5 rounded-xl border text-left font-medium transition-all ${
                         timeSlot === slot
-                          ? 'bg-forest-900 text-white border-forest-900 shadow-sm'
+                          ? 'bg-healis-blue text-white border-healis-blue shadow-sm'
                           : 'bg-stone-50 hover:bg-stone-100 text-slate-700 border-black/5'
                       }`}
                     >
@@ -243,7 +243,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   placeholder="e.g. Jordan Mitchell"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full text-xs font-medium p-3 rounded-xl border border-black/10 focus:outline-forest-900"
+                  className="w-full text-xs font-medium p-3 rounded-xl border border-black/10 focus:outline-healis-blue"
                 />
               </div>
 
@@ -258,20 +258,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   placeholder="0400 000 000"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full text-xs font-medium p-3 rounded-xl border border-black/10 focus:outline-forest-900"
+                  className="w-full text-xs font-medium p-3 rounded-xl border border-black/10 focus:outline-healis-blue"
                 />
               </div>
 
               {/* Booking Summary Pill */}
-              <div className="p-3.5 rounded-2xl bg-[#F7F5F0] text-xs text-slate-700 space-y-1">
+              <div className="p-3.5 rounded-2xl bg-[#F8F9FB] text-xs text-slate-700 space-y-1">
                 <div className="flex justify-between font-semibold text-slate-900">
                   <span>{clinic} Clinic</span>
-                  <span className="text-forest-800">{service.split(' ')[0]} ({practitioner})</span>
+                  <span className="text-healis-blue">{service.split(' ')[0]} ({practitioner})</span>
                 </div>
                 <div className="text-[11px] text-slate-500">
                   {currentClinicData.address}
                 </div>
-                <div className="text-[11px] text-emerald-800 font-medium">
+                <div className="text-[11px] text-healis-blue font-medium">
                   {timeSlot}
                 </div>
               </div>
@@ -280,14 +280,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="px-4 py-3 rounded-full border border-black/10 text-xs font-semibold text-slate-600 hover:bg-stone-50 transition-colors"
+                  className="px-5 py-3 rounded-pill border border-black/10 text-xs font-medium text-slate-600 hover:bg-stone-50 transition-colors"
                 >
                   Back
                 </button>
                 <button
                   type="button"
                   onClick={handleNext}
-                  className="flex-1 py-3 rounded-full bg-forest-900 hover:bg-forest-950 text-white text-xs font-semibold tracking-wider uppercase transition-all shadow-md"
+                  className="flex-1 py-3 rounded-pill bg-healis-blue hover:bg-black text-white text-xs font-medium tracking-normal transition-all shadow-md hover:scale-[0.98]"
                 >
                   Confirm Appointment
                 </button>
@@ -297,22 +297,22 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
           {step === 3 && (
             <div className="text-center py-6 space-y-5">
-              <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto shadow-inner">
+              <div className="w-14 h-14 rounded-full bg-healis-blue/10 text-healis-blue flex items-center justify-center mx-auto shadow-inner">
                 <Check className="w-7 h-7" />
               </div>
 
               <div>
-                <h4 className="text-2xl font-light text-slate-900">
+                <h4 className="text-2xl font-normal text-healis-dark">
                   Appointment Confirmed
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto mt-1 font-light">
+                <p className="text-xs sm:text-sm text-healis-grey max-w-sm mx-auto mt-1 font-normal">
                   Thank you <span className="font-semibold text-slate-900">{name || 'Patient'}</span>. We have reserved your session at our <span className="font-semibold text-slate-900">{clinic} Practice</span>.
                 </p>
               </div>
 
               {/* Realistic SMS Card Simulation */}
               <div className="p-4 rounded-2xl bg-slate-900 text-white text-left max-w-sm mx-auto space-y-2 text-xs font-light">
-                <div className="text-[10px] text-emerald-400 uppercase font-mono tracking-wider">
+                <div className="text-[10px] text-healis-blue uppercase font-mono tracking-wider">
                   SMS Dispatched to {phone || '0400 000 000'}
                 </div>
                 <div className="text-slate-300">
@@ -324,7 +324,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <button
                   type="button"
                   onClick={handleResetAndClose}
-                  className="px-8 py-3 rounded-full bg-forest-900 text-white text-xs font-semibold tracking-wider uppercase shadow-md"
+                  className="px-8 py-3 rounded-pill bg-healis-blue hover:bg-black text-white text-xs font-medium tracking-normal shadow-md hover:scale-[0.98]"
                 >
                   Done
                 </button>

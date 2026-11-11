@@ -23,5 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# Template reference files
-Healis*
+# Template reference files in root
+/Healis*

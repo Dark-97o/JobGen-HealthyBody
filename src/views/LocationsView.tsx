@@ -45,10 +45,10 @@ export const LocationsView: React.FC<LocationsViewProps> = ({ onOpenBooking }) =
                 key={clinic.id}
                 type="button"
                 onClick={() => setActiveClinicId(clinic.id)}
-                className={`px-6 py-3 rounded-full text-xs font-semibold tracking-wider uppercase transition-all ${
+                className={`px-6 py-3 rounded-pill text-xs font-medium tracking-normal transition-all duration-300 ${
                   isActive
-                    ? 'bg-forest-900 text-white shadow-md'
-                    : 'bg-white text-slate-700 hover:bg-stone-100 border border-black/5'
+                    ? 'bg-healis-blue text-white shadow-md'
+                    : 'bg-white text-healis-dark hover:bg-stone-100 border border-black/5'
                 }`}
               >
                 {clinic.suburb}
@@ -63,7 +63,7 @@ export const LocationsView: React.FC<LocationsViewProps> = ({ onOpenBooking }) =
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-white rounded-3xl p-8 sm:p-12 border border-black/5 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-start"
+          className="bg-white rounded-[2rem] p-8 sm:p-12 border border-black/5 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-start"
         >
           {/* Left Column: Details */}
           <div className="lg:col-span-7 space-y-6">
@@ -71,49 +71,49 @@ export const LocationsView: React.FC<LocationsViewProps> = ({ onOpenBooking }) =
               <div className="text-xs uppercase tracking-widest text-slate-400 font-medium">
                 {selectedClinic.suburb} Practice
               </div>
-              <h2 className="text-3xl sm:text-4xl font-light text-slate-900 mt-1">
+              <h2 className="text-3xl sm:text-4xl font-normal text-healis-dark mt-1">
                 {selectedClinic.name}
               </h2>
-              <p className="text-sm sm:text-base text-slate-600 font-light leading-relaxed mt-3">
+              <p className="text-sm sm:text-base text-healis-grey font-normal leading-relaxed mt-3">
                 {selectedClinic.description}
               </p>
             </div>
 
             {/* Address & Contact Details */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-5 rounded-2xl bg-[#FAF8F5] border border-black/5 space-y-1.5">
-                <div className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-forest-700" />
+              <div className="p-5 rounded-2xl bg-[#F8F9FB] border border-black/5 space-y-1.5">
+                <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-healis-blue" />
                   Address
                 </div>
-                <div className="text-sm font-medium text-slate-900">
+                <div className="text-sm font-medium text-healis-dark">
                   {selectedClinic.address}
                 </div>
                 <a
                   href={`https://maps.google.com/?q=${encodeURIComponent(selectedClinic.address)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-forest-800 hover:underline pt-2"
+                  className="inline-flex items-center gap-1 text-xs font-medium text-healis-blue hover:underline pt-2"
                 >
                   <span>Open in Google Maps</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
 
-              <div className="p-5 rounded-2xl bg-[#FAF8F5] border border-black/5 space-y-1.5">
-                <div className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-                  <Phone className="w-3.5 h-3.5 text-forest-700" />
+              <div className="p-5 rounded-2xl bg-[#F8F9FB] border border-black/5 space-y-1.5">
+                <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                  <Phone className="w-3.5 h-3.5 text-healis-blue" />
                   Direct Phone
                 </div>
                 <a
                   href={`tel:${selectedClinic.phone.replace(/[^0-9]/g, '')}`}
-                  className="text-sm font-bold font-mono text-slate-900 block hover:text-forest-800"
+                  className="text-sm font-semibold font-mono text-healis-dark block hover:text-healis-blue transition-colors"
                 >
                   {selectedClinic.phone}
                 </a>
                 <a
                   href={`mailto:${selectedClinic.email}`}
-                  className="text-xs text-slate-500 block hover:underline truncate"
+                  className="text-xs text-healis-grey block hover:underline truncate"
                 >
                   {selectedClinic.email}
                 </a>
@@ -121,11 +121,11 @@ export const LocationsView: React.FC<LocationsViewProps> = ({ onOpenBooking }) =
             </div>
 
             {/* Parking & Accessibility */}
-            <div className="p-5 rounded-2xl bg-[#FAF8F5] border border-black/5 flex items-start gap-3">
-              <Car className="w-5 h-5 text-forest-700 mt-0.5 flex-shrink-0" />
+            <div className="p-5 rounded-2xl bg-[#F8F9FB] border border-black/5 flex items-start gap-3">
+              <Car className="w-5 h-5 text-healis-blue mt-0.5 flex-shrink-0" />
               <div>
-                <div className="text-xs font-bold text-slate-900">Parking & Transit</div>
-                <div className="text-xs text-slate-600 font-light mt-0.5 leading-relaxed">
+                <div className="text-xs font-semibold text-healis-dark">Parking & Transit</div>
+                <div className="text-xs text-healis-grey font-normal mt-0.5 leading-relaxed">
                   {selectedClinic.parking}
                 </div>
               </div>
@@ -133,22 +133,22 @@ export const LocationsView: React.FC<LocationsViewProps> = ({ onOpenBooking }) =
 
             {/* Opening Hours */}
             <div className="pt-2 space-y-2">
-              <div className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-forest-700" />
+              <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-healis-blue" />
                 Operating Hours
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
                 <div className="p-3 rounded-xl bg-stone-50 border border-black/5">
                   <span className="text-slate-500 block">Mon – Thu</span>
-                  <span className="font-semibold text-slate-900">{selectedClinic.hours.weekdays}</span>
+                  <span className="font-semibold text-healis-dark">{selectedClinic.hours.weekdays}</span>
                 </div>
                 <div className="p-3 rounded-xl bg-stone-50 border border-black/5">
                   <span className="text-slate-500 block">Friday</span>
-                  <span className="font-semibold text-slate-900">{selectedClinic.hours.friday}</span>
+                  <span className="font-semibold text-healis-dark">{selectedClinic.hours.friday}</span>
                 </div>
                 <div className="p-3 rounded-xl bg-stone-50 border border-black/5">
                   <span className="text-slate-500 block">Saturday Morning</span>
-                  <span className="font-semibold text-slate-900">{selectedClinic.hours.saturday}</span>
+                  <span className="font-semibold text-healis-dark">{selectedClinic.hours.saturday}</span>
                 </div>
               </div>
             </div>
@@ -158,10 +158,10 @@ export const LocationsView: React.FC<LocationsViewProps> = ({ onOpenBooking }) =
               <button
                 type="button"
                 onClick={onOpenBooking}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-forest-900 hover:bg-forest-950 text-white text-xs font-semibold tracking-wider uppercase transition-all shadow-md"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-pill bg-healis-blue hover:bg-black text-white text-xs font-medium tracking-normal transition-all shadow-md hover:scale-[0.98]"
               >
                 <span>Book Consultation at {selectedClinic.suburb}</span>
-                <ArrowUpRight className="w-4 h-4 text-emerald-300" />
+                <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
           </div>
