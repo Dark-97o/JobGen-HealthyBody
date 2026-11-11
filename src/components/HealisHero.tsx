@@ -23,17 +23,17 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 space-y-6 text-left"
           >
-            {/* Main Headline on the Left - 4 lines, one word each, ALL CAPS */}
-            <h1 className="text-[44px] sm:text-[56px] lg:text-[68px] font-bold text-healis-dark tracking-tight leading-[0.95] uppercase select-none">
+            {/* Main Headline on the Left - 10px bigger, 4 lines, one word each, ALL CAPS */}
+            <h1 className="text-[54px] sm:text-[66px] lg:text-[78px] font-bold text-healis-dark tracking-tight leading-[0.92] uppercase select-none">
               <span className="block">THE</span>
               <span className="block">HEALTHY</span>
               <span className="block">BODY</span>
               <span className="block text-healis-blue">COMPANY</span>
             </h1>
 
-            {/* Supporting Micro-copy */}
-            <p className="text-base sm:text-lg text-healis-grey font-normal leading-relaxed">
-              Helping you love the body you live in. Comprehensive physiotherapy, active sports rehabilitation, and individualized care across Sydney.
+            {/* Supporting Micro-copy Summarised to 2 Lines */}
+            <p className="text-base sm:text-lg text-healis-grey font-normal leading-snug max-w-md">
+              Helping you love the body you live in with expert physiotherapy and active recovery across Sydney.
             </p>
 
             {/* Action Buttons Directly Below Headline on Left Side */}
