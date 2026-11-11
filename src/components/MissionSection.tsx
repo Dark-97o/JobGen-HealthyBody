@@ -41,7 +41,7 @@ export const MissionSection: React.FC<MissionSectionProps> = ({ onSelectAbout })
               <span>The Healthy Body Solution</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.12]">
+            <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.25] sm:leading-[1.2]">
               Dedicated to your health and <span className="text-healis-blue font-medium">well-being</span>
             </h2>
 

@@ -31,7 +31,7 @@ export const FloatingBar: React.FC<FloatingBarProps> = ({ onOpenBooking }) => {
             href="tel:0247225555"
             className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors"
           >
-            <Phone className="w-3.5 h-3.5 text-emerald-400" />
+            <Phone className="w-3.5 h-3.5 text-healis-blue" />
             <span>(02) 4722 5555</span>
           </a>
 
@@ -40,9 +40,9 @@ export const FloatingBar: React.FC<FloatingBarProps> = ({ onOpenBooking }) => {
           <button
             type="button"
             onClick={onOpenBooking}
-            className="flex items-center gap-2 text-white hover:text-emerald-300 transition-colors font-semibold"
+            className="flex items-center gap-2 text-white hover:text-healis-blue transition-colors font-semibold"
           >
-            <Calendar className="w-3.5 h-3.5 text-emerald-400" />
+            <Calendar className="w-3.5 h-3.5 text-healis-blue" />
             <span>Book Consultation</span>
           </button>
         </motion.div>

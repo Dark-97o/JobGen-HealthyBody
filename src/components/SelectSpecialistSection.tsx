@@ -55,7 +55,7 @@ export const SelectSpecialistSection: React.FC<SelectSpecialistSectionProps> = (
               <span>The Healthy Body Solution</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.12]">
+            <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.25] sm:leading-[1.2]">
               Select your specialist, book <span className="text-healis-blue font-medium">instantly</span>
             </h2>
 

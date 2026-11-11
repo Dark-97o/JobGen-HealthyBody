@@ -40,7 +40,7 @@ export const ComprehensiveCareSection: React.FC = () => {
               <span>The Healthy Body Solution</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.12]">
+            <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.25] sm:leading-[1.2]">
               Comprehensive care for every stage of <span className="text-healis-blue font-medium">life</span>
             </h2>
 

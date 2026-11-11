@@ -19,9 +19,9 @@ export const BlogView: React.FC = () => {
           <div className="text-xs uppercase tracking-[0.2em] font-semibold text-slate-500 mb-3">
             Clinical Insights & Advice
           </div>
-          <h1 className="text-4xl sm:text-6xl font-light text-slate-900 tracking-tight leading-[1.08]">
+          <h1 className="text-4xl sm:text-6xl font-normal text-healis-dark tracking-tight leading-[1.2] sm:leading-[1.18]">
             The Healthy Body <br />
-            <span className="font-serif italic font-normal text-forest-800">
+            <span className="text-healis-blue font-medium">
               knowledge hub
             </span>
           </h1>
@@ -59,7 +59,7 @@ export const BlogView: React.FC = () => {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-medium text-slate-900 group-hover:text-forest-800 transition-colors">
+                  <h3 className="text-lg font-medium text-slate-900 group-hover:text-healis-blue transition-colors">
                     {post.title}
                   </h3>
 

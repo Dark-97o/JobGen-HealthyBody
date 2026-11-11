@@ -4,11 +4,11 @@
 
 @layer base {
   body {
-    @apply bg-[#FBF9F5] text-slate-800 font-sans tracking-tight;
+    @apply bg-[#F8F9FB] text-healis-dark font-sans tracking-tight;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight font-display;
+    @apply tracking-tight font-display text-healis-dark;
   }
 }
 

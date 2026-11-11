@@ -28,7 +28,7 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
               <span>The Healthy Body Solution</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.12]">
+            <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.25] sm:leading-[1.2]">
               Find quality care nearby and access it when you <span className="text-healis-blue font-medium">need</span> it
             </h2>
 

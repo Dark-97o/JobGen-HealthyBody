@@ -25,9 +25,9 @@ export const LocationsView: React.FC<LocationsViewProps> = ({ onOpenBooking }) =
           <div className="text-xs uppercase tracking-[0.2em] font-semibold text-slate-500 mb-3">
             Physical Clinics
           </div>
-          <h1 className="text-4xl sm:text-6xl font-light text-slate-900 tracking-tight leading-[1.08]">
+          <h1 className="text-4xl sm:text-6xl font-normal text-healis-dark tracking-tight leading-[1.2] sm:leading-[1.18]">
             Four Sydney <br />
-            <span className="font-serif italic font-normal text-forest-800">
+            <span className="text-healis-blue font-medium">
               practices & gyms
             </span>
           </h1>

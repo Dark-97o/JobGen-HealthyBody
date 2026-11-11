@@ -48,3 +48,4 @@ export const SpecialtiesMarquee: React.FC = () => {
     </div>
   );
 };
+

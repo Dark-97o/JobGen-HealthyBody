@@ -37,3 +37,4 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenBooking }) => {
     </section>
   );
 };
+

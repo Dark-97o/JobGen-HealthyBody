@@ -43,7 +43,7 @@ export const TestimonialsParallaxSection: React.FC = () => {
           <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-pill text-xs font-medium text-healis-blue tracking-tight shadow-xs border border-black/5">
             <span>Patient Experiences</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.12]">
+          <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.25] sm:leading-[1.2]">
             Stories of recovery and <span className="text-healis-blue font-medium">strength</span>
           </h2>
         </motion.div>

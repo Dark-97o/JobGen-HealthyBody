@@ -48,9 +48,9 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
           <div className="text-xs uppercase tracking-[0.2em] font-semibold text-slate-500 mb-3">
             Since 1998
           </div>
-          <h1 className="text-4xl sm:text-6xl font-light text-slate-900 tracking-tight leading-[1.08]">
+          <h1 className="text-4xl sm:text-6xl font-normal text-healis-dark tracking-tight leading-[1.2] sm:leading-[1.18]">
             Helping you love <br />
-            <span className="font-serif italic font-normal text-forest-800">
+            <span className="text-healis-blue font-medium">
               the body you live in
             </span>
           </h1>
@@ -91,8 +91,8 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
             <div className="text-xs uppercase tracking-[0.2em] font-semibold text-slate-500 mb-2">
               Our Principles
             </div>
-            <h2 className="text-3xl sm:text-4xl font-light text-slate-900">
-              Values that guide our <span className="font-serif italic text-forest-800">care</span>
+            <h2 className="text-3xl sm:text-4xl font-normal text-healis-dark tracking-tight leading-[1.25]">
+              Values that guide our <span className="text-healis-blue font-medium">care</span>
             </h2>
           </div>
 
