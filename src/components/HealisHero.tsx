@@ -13,27 +13,32 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
 }) => {
   return (
     <section className="relative min-h-screen flex items-center pt-28 pb-16 sm:pt-32 sm:pb-20 lg:py-24 bg-[#F8F9FB] overflow-hidden">
-      <div className="max-w-[1340px] w-full mx-auto px-6 sm:px-8">
+      {/* Brand Red Half Semi-Circle on the Left Edge */}
+      <div
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-44 h-88 sm:w-60 sm:h-[480px] lg:w-72 lg:h-[580px] rounded-r-full bg-[#E53935] pointer-events-none z-0 shadow-2xl opacity-90"
+        aria-hidden="true"
+      />
+
+      <div className="max-w-[1340px] w-full mx-auto px-6 sm:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Column: Headline, Copy, & Action Buttons */}
+          {/* Left Column: Headline, Info, & Action Buttons */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 space-y-6 text-left"
           >
-            {/* Main Headline on the Left - 10px bigger, 4 lines, one word each, ALL CAPS */}
-            <h1 className="text-[54px] sm:text-[66px] lg:text-[78px] font-bold text-healis-dark tracking-tight leading-[0.92] uppercase select-none">
-              <span className="block">THE</span>
-              <span className="block">HEALTHY</span>
-              <span className="block">BODY</span>
-              <span className="block text-healis-blue">COMPANY</span>
+            {/* Main Headline on the Left */}
+            <h1 className="text-[44px] sm:text-[56px] lg:text-[68px] font-bold text-healis-dark tracking-tight leading-[1.02] uppercase select-none">
+              Live your best <br />
+              active life, <br />
+              <span className="text-healis-blue">always!</span>
             </h1>
 
-            {/* Supporting Micro-copy Summarised to 2 Lines */}
-            <p className="text-base sm:text-lg text-healis-grey font-normal leading-snug max-w-md">
-              Helping you love the body you live in with expert physiotherapy and active recovery across Sydney.
+            {/* Info Micro-copy */}
+            <p className="text-xl sm:text-2xl text-healis-dark font-medium leading-snug">
+              With your local physio.
             </p>
 
             {/* Action Buttons Directly Below Headline on Left Side */}
@@ -67,17 +72,17 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
             {/* 20% larger cards in a 2x2 grid with pointed (sharp) corners */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.08] origin-center">
               
-              {/* Card 1 (Top-Left): Authentic Clinical Portrait Image Card - Pointed Corners */}
+              {/* Card 1 (Top-Left): Sports Physio Image Card (previously bottom-right) - Pointed Corners */}
               <div className="rounded-none overflow-hidden bg-slate-100 shadow-lg border-2 border-white aspect-[4/3] sm:aspect-square min-h-[260px] sm:min-h-[300px] relative group">
                 <img
-                  src="https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Physiotherapy-in-Penrith-scaled-e1761877313120.jpg"
-                  alt="The Healthy Body Company physiotherapist consulting with a patient"
+                  src="https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/sports-physio-The-Healthy-Body-2304035057-scaled-e1719978691299.jpg"
+                  alt="Sports physiotherapy rehabilitation session at The Healthy Body Company"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 right-5 text-white">
                   <span className="text-[11px] font-semibold bg-white/20 backdrop-blur-md px-3 py-1 rounded-none border border-white/20 uppercase tracking-wider">
-                    Clinical Assessment
+                    Sports Physiotherapy
                   </span>
                 </div>
               </div>
@@ -141,17 +146,17 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                 </div>
               </div>
 
-              {/* Card 4 (Bottom-Right): Authentic Team & Rehabilitation Image Card - Pointed Corners */}
+              {/* Card 4 (Bottom-Right): Red T-Shirt / Brand Polo Image Card - Pointed Corners */}
               <div className="rounded-none overflow-hidden bg-slate-100 shadow-lg border-2 border-white aspect-[4/3] sm:aspect-square min-h-[260px] sm:min-h-[300px] relative group">
                 <img
-                  src="https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/sports-physio-The-Healthy-Body-2304035057-scaled-e1719978691299.jpg"
-                  alt="Sports physiotherapy rehabilitation session at The Healthy Body Company"
+                  src="/images/red-tshirt.jpg"
+                  alt="The Healthy Body Company official clinician team uniform"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 right-5 text-white">
                   <span className="text-[11px] font-semibold bg-white/20 backdrop-blur-md px-3 py-1 rounded-none border border-white/20 uppercase tracking-wider">
-                    Active Gym Rehabilitation
+                    The Healthy Body Company
                   </span>
                 </div>
               </div>
