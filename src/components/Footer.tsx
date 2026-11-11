@@ -11,8 +11,8 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
   };
 
   return (
-    <footer className="bg-[#0F1E17] text-slate-300 pt-16 pb-12 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-14">
+    <footer className="bg-[#111111] text-slate-300 pt-16 pb-12 border-t border-white/5">
+      <div className="max-w-[1240px] mx-auto px-6 sm:px-8 space-y-14">
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Logo & Ethos */}
@@ -20,22 +20,22 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
             <img
               src="https://www.thehealthybodycompany.com.au/wp-content/themes/thbc/static/images/thbc-logo-white.png"
               alt="The Healthy Body Company"
-              className="h-10 w-auto object-contain"
+              className="h-9 w-auto object-contain"
             />
-            <p className="text-xs text-slate-400 font-light leading-relaxed max-w-sm">
+            <p className="text-xs text-slate-400 font-normal leading-relaxed max-w-sm">
               Established in Penrith in 1998. Dedicated to helping you love the body you live in through expert physical diagnosis, specialist hands-on therapy, and on-site gym rehabilitation.
             </p>
-            <div className="pt-2 flex flex-wrap gap-2 text-[10px] uppercase tracking-wider font-semibold text-emerald-400">
-              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+            <div className="pt-2 flex flex-wrap gap-2 text-[10px] uppercase tracking-wider font-semibold text-healis-blue">
+              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10 text-slate-300">
                 APA Accredited
               </span>
-              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10 text-slate-300">
                 AHPRA Registered
               </span>
-              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10 text-slate-300">
                 SIRA Approved
               </span>
-              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10 text-slate-300">
                 NDIS Registered
               </span>
             </div>
@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
             <div className="text-xs font-semibold uppercase tracking-wider text-white">
               Navigation
             </div>
-            <ul className="space-y-2 text-xs text-slate-400 font-light">
+            <ul className="space-y-2 text-xs text-slate-400 font-normal">
               <li>
                 <button
                   type="button"
@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  All 16 Services
+                  Services
                 </button>
               </li>
               <li>
@@ -80,7 +80,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  4 Sydney Clinics
+                  Location
                 </button>
               </li>
               <li>
@@ -92,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  Our Practitioners
+                  Doctors
                 </button>
               </li>
               <li>
@@ -104,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  About Our Story
+                  About Us
                 </button>
               </li>
               <li>
@@ -116,7 +116,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  Clinical Blog
+                  Blog
                 </button>
               </li>
               <li>
@@ -128,7 +128,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  Patient FAQs
+                  FAQs
                 </button>
               </li>
             </ul>
@@ -139,17 +139,17 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
             <div className="text-xs font-semibold uppercase tracking-wider text-white">
               Penrith & Caringbah
             </div>
-            <div className="text-xs text-slate-400 font-light space-y-1">
+            <div className="text-xs text-slate-400 font-normal space-y-1">
               <span className="font-semibold text-white block">Penrith Flagship</span>
               <span>95 Lethbridge St, Penrith NSW 2750</span>
-              <a href="tel:0247225555" className="block text-emerald-300 font-mono pt-0.5">
+              <a href="tel:0247225555" className="block text-slate-200 font-mono pt-0.5 hover:text-healis-blue">
                 (02) 4722 5555
               </a>
             </div>
-            <div className="text-xs text-slate-400 font-light space-y-1 pt-2">
+            <div className="text-xs text-slate-400 font-normal space-y-1 pt-2">
               <span className="font-semibold text-white block">Caringbah Practice</span>
               <span>Suite 2, 383 Port Hacking Rd, Caringbah NSW 2229</span>
-              <a href="tel:0295312000" className="block text-emerald-300 font-mono pt-0.5">
+              <a href="tel:0295312000" className="block text-slate-200 font-mono pt-0.5 hover:text-healis-blue">
                 (02) 9531 2000
               </a>
             </div>
@@ -160,17 +160,17 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
             <div className="text-xs font-semibold uppercase tracking-wider text-white">
               Jordan Springs & Mount Annan
             </div>
-            <div className="text-xs text-slate-400 font-light space-y-1">
+            <div className="text-xs text-slate-400 font-normal space-y-1">
               <span className="font-semibold text-white block">Jordan Springs</span>
               <span>Unit 9, 65 Water Gum Dr, Jordan Springs NSW 2747</span>
-              <a href="tel:0247226994" className="block text-emerald-300 font-mono pt-0.5">
+              <a href="tel:0247226994" className="block text-slate-200 font-mono pt-0.5 hover:text-healis-blue">
                 (02) 4722 6994
               </a>
             </div>
-            <div className="text-xs text-slate-400 font-light space-y-1 pt-2">
+            <div className="text-xs text-slate-400 font-normal space-y-1 pt-2">
               <span className="font-semibold text-white block">Mount Annan</span>
               <span>Shop 2, 1 Raintree Way, Mount Annan NSW 2567</span>
-              <a href="tel:0246228111" className="block text-emerald-300 font-mono pt-0.5">
+              <a href="tel:0246228111" className="block text-slate-200 font-mono pt-0.5 hover:text-healis-blue">
                 (02) 4622 8111
               </a>
             </div>
@@ -178,7 +178,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
         </div>
 
         {/* Bottom Strip */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-light">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-normal">
           <div>
             © {new Date().getFullYear()} The Healthy Body Company Pty Ltd. All rights reserved. ABN 84 092 114 742.
           </div>

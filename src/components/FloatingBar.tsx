@@ -50,3 +50,4 @@ export const FloatingBar: React.FC<FloatingBarProps> = ({ onOpenBooking }) => {
     </AnimatePresence>
   );
 };
+

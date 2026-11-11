@@ -124,3 +124,4 @@ export const TeamView: React.FC<TeamViewProps> = ({ onOpenBooking }) => {
     </div>
   );
 };
+

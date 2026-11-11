@@ -476,3 +476,4 @@ export const REAL_FAQS = [
     a: 'Initial consultations are 45 minutes of comprehensive assessment, physical diagnosis, hands-on treatment, and recovery planning. Standard follow-up appointments are 30 minutes of focused progression.',
   },
 ];
+

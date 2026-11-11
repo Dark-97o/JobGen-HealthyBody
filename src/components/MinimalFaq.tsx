@@ -84,3 +84,4 @@ export const MinimalFaq: React.FC = () => {
     </section>
   );
 };
+
