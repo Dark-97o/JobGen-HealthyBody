@@ -1,47 +1,196 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onSelectTab: (tab: string) => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="bg-[#0E1411] text-slate-400 py-16 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-white/10">
-          <div>
-            <span className="text-white text-lg font-light tracking-tight">
-              The Healthy Body Company
-            </span>
-            <p className="text-xs text-slate-500 font-light mt-1">
-              Evidence-based physical care across Greater Western Sydney & Sutherland Shire. Est. 1998.
+    <footer className="bg-[#0F1E17] text-slate-300 pt-16 pb-12 border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-14">
+        {/* Top Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+          {/* Logo & Ethos */}
+          <div className="lg:col-span-2 space-y-4">
+            <img
+              src="https://www.thehealthybodycompany.com.au/wp-content/themes/thbc/static/images/thbc-logo-white.png"
+              alt="The Healthy Body Company"
+              className="h-10 w-auto object-contain"
+            />
+            <p className="text-xs text-slate-400 font-light leading-relaxed max-w-sm">
+              Established in Penrith in 1998. Dedicated to helping you love the body you live in through expert physical diagnosis, specialist hands-on therapy, and on-site gym rehabilitation.
             </p>
+            <div className="pt-2 flex flex-wrap gap-2 text-[10px] uppercase tracking-wider font-semibold text-emerald-400">
+              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+                APA Accredited
+              </span>
+              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+                AHPRA Registered
+              </span>
+              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+                SIRA Approved
+              </span>
+              <span className="bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
+                NDIS Registered
+              </span>
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-6 text-xs font-semibold uppercase tracking-wider text-slate-400">
-            <span>Penrith</span>
-            <span>Caringbah</span>
-            <span>Jordan Springs</span>
-            <span>Mount Annan</span>
+          {/* Quick Page Links */}
+          <div className="space-y-3">
+            <div className="text-xs font-semibold uppercase tracking-wider text-white">
+              Navigation
+            </div>
+            <ul className="space-y-2 text-xs text-slate-400 font-light">
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectTab('home');
+                    scrollToTop();
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Home
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectTab('services');
+                    scrollToTop();
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  All 16 Services
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectTab('locations');
+                    scrollToTop();
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  4 Sydney Clinics
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectTab('team');
+                    scrollToTop();
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Our Practitioners
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectTab('about');
+                    scrollToTop();
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  About Our Story
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectTab('blog');
+                    scrollToTop();
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Clinical Blog
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectTab('faqs');
+                    scrollToTop();
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Patient FAQs
+                </button>
+              </li>
+            </ul>
           </div>
 
-          <button
-            type="button"
-            onClick={scrollToTop}
-            className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors"
-            aria-label="Back to top"
-          >
-            <ArrowUp className="w-4 h-4" />
-          </button>
+          {/* Clinics 1 & 2 */}
+          <div className="space-y-4">
+            <div className="text-xs font-semibold uppercase tracking-wider text-white">
+              Penrith & Caringbah
+            </div>
+            <div className="text-xs text-slate-400 font-light space-y-1">
+              <span className="font-semibold text-white block">Penrith Flagship</span>
+              <span>95 Lethbridge St, Penrith NSW 2750</span>
+              <a href="tel:0247225555" className="block text-emerald-300 font-mono pt-0.5">
+                (02) 4722 5555
+              </a>
+            </div>
+            <div className="text-xs text-slate-400 font-light space-y-1 pt-2">
+              <span className="font-semibold text-white block">Caringbah Practice</span>
+              <span>Suite 2, 383 Port Hacking Rd, Caringbah NSW 2229</span>
+              <a href="tel:0295312000" className="block text-emerald-300 font-mono pt-0.5">
+                (02) 9531 2000
+              </a>
+            </div>
+          </div>
+
+          {/* Clinics 3 & 4 */}
+          <div className="space-y-4">
+            <div className="text-xs font-semibold uppercase tracking-wider text-white">
+              Jordan Springs & Mount Annan
+            </div>
+            <div className="text-xs text-slate-400 font-light space-y-1">
+              <span className="font-semibold text-white block">Jordan Springs</span>
+              <span>Unit 9, 65 Water Gum Dr, Jordan Springs NSW 2747</span>
+              <a href="tel:0247226994" className="block text-emerald-300 font-mono pt-0.5">
+                (02) 4722 6994
+              </a>
+            </div>
+            <div className="text-xs text-slate-400 font-light space-y-1 pt-2">
+              <span className="font-semibold text-white block">Mount Annan</span>
+              <span>Shop 2, 1 Raintree Way, Mount Annan NSW 2567</span>
+              <a href="tel:0246228111" className="block text-emerald-300 font-mono pt-0.5">
+                (02) 4622 8111
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 font-light">
+        {/* Bottom Strip */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-light">
           <div>
-            © {new Date().getFullYear()} The Healthy Body Company Pty Ltd. All rights reserved.
+            © {new Date().getFullYear()} The Healthy Body Company Pty Ltd. All rights reserved. ABN 84 092 114 742.
           </div>
-          <div className="text-right">
-            APA Accredited • AHPRA Registered • SIRA & NDIS Approved
+          <div className="flex items-center gap-4">
+            <button
+              type="button"
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
+            >
+              <span>Back to Top</span>
+              <ArrowUp className="w-3.5 h-3.5" />
+            </button>
           </div>
         </div>
       </div>

@@ -123,3 +123,4 @@ export const ServicesBento: React.FC<ServicesBentoProps> = ({ onOpenBooking }) =
     </section>
   );
 };
+

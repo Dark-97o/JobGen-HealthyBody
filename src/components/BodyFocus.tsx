@@ -166,3 +166,4 @@ export const BodyFocus: React.FC<BodyFocusProps> = ({ onOpenBooking }) => {
     </section>
   );
 };
+

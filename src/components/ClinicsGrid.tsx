@@ -115,3 +115,4 @@ export const ClinicsGrid: React.FC<ClinicsGridProps> = ({ onOpenBooking }) => {
     </section>
   );
 };
+
