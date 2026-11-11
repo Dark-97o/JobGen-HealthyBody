@@ -37,8 +37,9 @@ export default {
       fontFamily: {
         sans: ['DM Sans', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
         serif: ['Newsreader', 'Georgia', 'serif'],
-        title: ['DM Sans', 'Plus Jakarta Sans', 'sans-serif'],
-        display: ['DM Sans', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        title: ['"Exo 2"', 'DM Sans', 'Plus Jakarta Sans', 'sans-serif'],
+        display: ['"Exo 2"', 'DM Sans', 'system-ui', 'sans-serif'],
+        exo: ['"Exo 2"', 'sans-serif'],
       },
       borderRadius: {
         'card': '2rem',
