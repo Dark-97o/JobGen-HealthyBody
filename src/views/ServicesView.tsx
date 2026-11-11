@@ -23,7 +23,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => 
     : REAL_SERVICES.filter(s => s.category === activeCategory);
 
   return (
-    <div className="pt-32 pb-24 sm:pt-40 sm:pb-32 bg-[#FAF8F5]">
+    <div className="pt-32 pb-24 sm:pt-40 sm:pb-32 bg-[#F8F9FB]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <motion.div
@@ -41,7 +41,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => 
               physical therapies
             </span>
           </h1>
-          <p className="mt-6 text-base sm:text-lg text-slate-600 font-light leading-relaxed">
+          <p className="mt-6 text-base sm:text-lg text-healis-grey font-normal leading-relaxed">
             Every session at The Healthy Body Company is conducted one-on-one by our qualified physiotherapists and remedial therapists in private suites with on-site gym access.
           </p>
         </motion.div>
@@ -53,10 +53,10 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => 
               key={c.id}
               type="button"
               onClick={() => setActiveCategory(c.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all ${
+              className={`px-6 py-2.5 rounded-pill text-xs font-medium tracking-normal transition-all duration-300 ${
                 activeCategory === c.id
-                  ? 'bg-forest-900 text-white shadow-md'
-                  : 'bg-white text-slate-700 hover:bg-stone-100 border border-black/5'
+                  ? 'bg-healis-blue text-white shadow-md'
+                  : 'bg-white text-healis-dark hover:bg-stone-100 border border-black/5'
               }`}
             >
               {c.label}
@@ -73,7 +73,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => 
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.6, delay: idx * 0.04, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-white rounded-3xl overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between group"
+              className="bg-white rounded-[2rem] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between group"
             >
               <div>
                 <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
@@ -88,7 +88,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => 
                   <h3 className="text-xl font-medium text-slate-900 group-hover:text-healis-blue transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
+                  <p className="text-xs sm:text-sm text-healis-grey font-normal leading-relaxed">
                     {service.shortDesc}
                   </p>
 
@@ -97,8 +97,8 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => 
                       Target Indications:
                     </div>
                     {service.indications.map((ind, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-slate-700 font-light">
-                        <Check className="w-3.5 h-3.5 text-forest-700 flex-shrink-0" />
+                      <div key={i} className="flex items-center gap-2 text-xs text-healis-dark font-normal">
+                        <Check className="w-3.5 h-3.5 text-healis-blue flex-shrink-0" />
                         <span>{ind}</span>
                       </div>
                     ))}
@@ -109,7 +109,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => 
                       Session Highlights:
                     </div>
                     {service.features.map((feat, i) => (
-                      <div key={i} className="text-xs text-forest-800 font-medium">
+                      <div key={i} className="text-xs text-healis-blue font-medium">
                         • {feat}
                       </div>
                     ))}
@@ -121,10 +121,10 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => 
                 <button
                   type="button"
                   onClick={onOpenBooking}
-                  className="w-full py-3.5 rounded-full bg-forest-900 hover:bg-forest-950 text-white text-xs font-semibold uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full py-3.5 rounded-pill bg-healis-blue hover:bg-black text-white text-xs font-medium tracking-normal transition-all flex items-center justify-center gap-2 shadow-sm duration-300 hover:scale-[0.98]"
                 >
                   <span>Book {service.title.split(' ')[0]}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-emerald-300" />
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </motion.div>
