@@ -12,14 +12,14 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
   onExploreServices,
 }) => {
   return (
-    <section className="relative min-h-screen flex items-center pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-56 lg:pb-28 bg-[#F8F9FB] overflow-x-clip">
-      {/* Brand Red Half Semi-Circle on the Left Edge - Perfectly proportioned geometric half semi-circle sized so it never goes behind the headline */}
+    <section className="relative min-h-screen flex items-center pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-28 bg-[#F8F9FB] overflow-x-clip">
+      {/* Brand Red Rounded Corner Vertical Half Rectangle on the Left Screen Edge */}
       <div
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-4 sm:w-5 lg:w-7 h-8 sm:h-10 lg:h-14 rounded-r-full bg-[#E53935] pointer-events-none z-0 shadow-sm"
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-8 sm:w-10 lg:w-12 h-44 sm:h-56 lg:h-64 rounded-r-2xl sm:rounded-r-3xl bg-[#E53935] pointer-events-none z-0 shadow-sm"
         aria-hidden="true"
       />
 
-      <div className="max-w-[1340px] w-full mx-auto px-6 sm:px-10 lg:pl-16 lg:pr-8 relative z-10">
+      <div className="max-w-[1340px] w-full mx-auto px-6 sm:px-10 lg:pl-20 lg:pr-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Column: Headline, Info, & Action Buttons */}
@@ -62,15 +62,15 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
             </div>
           </motion.div>
 
-          {/* Right Column: 4 Individual Cards - Moved up by 120px on desktop */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 mt-8 lg:mt-0 lg:-translate-y-[120px]"
-          >
-            {/* 20% larger cards in a 2x2 grid with pointed (sharp) corners - origin-top ensures cards scale cleanly */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.06] origin-top">
+          {/* Right Column: 4 Individual Cards - Dedicated wrapper ensuring -120px vertical shift is strictly applied */}
+          <div className="lg:col-span-7 mt-8 lg:mt-0 lg:-translate-y-[120px]">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96, x: 20 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {/* 20% larger cards in a 2x2 grid with pointed (sharp) corners - origin-top ensures cards scale cleanly */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.06] origin-top">
               
               {/* Card 1 (Top-Left): Sports Physio Image Card (previously bottom-right) - Pointed Corners */}
               <div className="rounded-none overflow-hidden bg-slate-100 shadow-lg border-2 border-white aspect-[4/3] sm:aspect-square min-h-[260px] sm:min-h-[300px] relative group">
@@ -163,6 +163,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
 
             </div>
           </motion.div>
+        </div>
 
         </div>
       </div>
