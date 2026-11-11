@@ -1,105 +1,50 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Biomechanics3D } from './components/Biomechanics3D';
-import { SymptomTriage } from './components/SymptomTriage';
-import { ServicesMatrix } from './components/ServicesMatrix';
-import { ClinicalPathway } from './components/ClinicalPathway';
-import { EvidenceHub } from './components/EvidenceHub';
-import { ClinicLocations } from './components/ClinicLocations';
-import { TeamDirectory } from './components/TeamDirectory';
-import { Testimonials } from './components/Testimonials';
+import { BodyFocus } from './components/BodyFocus';
+import { ServicesBento } from './components/ServicesBento';
+import { PathwaySteps } from './components/PathwaySteps';
+import { ClinicsGrid } from './components/ClinicsGrid';
+import { EditorialQuotes } from './components/EditorialQuotes';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
 
 export const App: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState<boolean>(false);
-  const [selectedClinicId, setSelectedClinicId] = useState<string>('penrith');
-  const [bookingServiceName, setBookingServiceName] = useState<string | undefined>(undefined);
-
-  const handleOpenBooking = (clinicId?: string, serviceName?: string) => {
-    if (clinicId) setSelectedClinicId(clinicId);
-    if (serviceName) setBookingServiceName(serviceName);
-    setIsBookingOpen(true);
-  };
-
-  const handleCloseBooking = () => {
-    setIsBookingOpen(false);
-    setBookingServiceName(undefined);
-  };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FBF9F5] text-slate-800 selection:bg-forest-600 selection:text-white">
-      {/* Sticky Navigation */}
-      <Navbar
-        onOpenBooking={(clinicId) => handleOpenBooking(clinicId)}
-        selectedClinicId={selectedClinicId}
-        onSelectClinic={setSelectedClinicId}
-      />
+    <div className="min-h-screen bg-[#FAF8F5] text-slate-800 font-sans selection:bg-slate-900 selection:text-white">
+      {/* Sleek Minimal Header */}
+      <Navbar onOpenBooking={() => setIsBookingOpen(true)} />
 
-      {/* Main Content Sections */}
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <Hero
-          onOpenBooking={(clinicId) => handleOpenBooking(clinicId)}
-          selectedClinicId={selectedClinicId}
-          onSelectClinic={setSelectedClinicId}
-        />
+      {/* Main Content */}
+      <main>
+        {/* Editorial Hero */}
+        <Hero onOpenBooking={() => setIsBookingOpen(true)} />
 
-        {/* 3D Interactive Biomechanical Body Navigator (React Three Fiber) */}
-        <Biomechanics3D
-          onBookCondition={(conditionName) =>
-            handleOpenBooking(selectedClinicId, `${conditionName} Consultation`)
-          }
-        />
+        {/* Fluid Body Focus Selector (Replaces 3D mannequin) */}
+        <BodyFocus onOpenBooking={() => setIsBookingOpen(true)} />
 
-        {/* Interactive Symptom & Goal Triage */}
-        <SymptomTriage
-          onBookService={(serviceName) =>
-            handleOpenBooking(selectedClinicId, serviceName)
-          }
-        />
+        {/* Modern Services Bento Grid */}
+        <ServicesBento onOpenBooking={() => setIsBookingOpen(true)} />
 
-        {/* Comprehensive Services Matrix */}
-        <ServicesMatrix
-          onBookService={(serviceName) =>
-            handleOpenBooking(selectedClinicId, serviceName)
-          }
-        />
+        {/* 4-Step Recovery Pathway */}
+        <PathwaySteps />
 
-        {/* 4-Step Clinical Pathway */}
-        <ClinicalPathway
-          onOpenBooking={() => handleOpenBooking(selectedClinicId)}
-        />
+        {/* Sydney Clinics Showcase */}
+        <ClinicsGrid onOpenBooking={() => setIsBookingOpen(true)} />
 
-        {/* Evidence-Based Rehabilitation Protocols Hub (Physio-Pedia inspired) */}
-        <EvidenceHub />
-
-        {/* Multi-Clinic Locations & Live Hours Hub */}
-        <ClinicLocations
-          selectedClinicId={selectedClinicId}
-          onSelectClinic={setSelectedClinicId}
-          onOpenBooking={(clinicId) => handleOpenBooking(clinicId)}
-        />
-
-        {/* Allied Health & Leadership Team */}
-        <TeamDirectory
-          onOpenBooking={() => handleOpenBooking(selectedClinicId)}
-        />
-
-        {/* Verified Patient Outcomes & Health Funds */}
-        <Testimonials />
+        {/* Editorial Trust & Quotes */}
+        <EditorialQuotes />
       </main>
 
-      {/* Comprehensive Footer */}
+      {/* Minimal Clean Footer */}
       <Footer />
 
-      {/* Interactive Booking Modal with Health Fund Rebate Calculator */}
+      {/* Streamlined Booking Modal */}
       <BookingModal
         isOpen={isBookingOpen}
-        onClose={handleCloseBooking}
-        initialClinicId={selectedClinicId}
-        initialServiceName={bookingServiceName}
+        onClose={() => setIsBookingOpen(false)}
       />
     </div>
   );
