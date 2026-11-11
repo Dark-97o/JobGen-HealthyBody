@@ -12,7 +12,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
   onExploreServices,
 }) => {
   return (
-    <section className="relative min-h-screen flex items-center pt-28 pb-16 sm:pt-32 sm:pb-20 lg:py-24 bg-[#F8F9FB] overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-44 lg:pb-28 bg-[#F8F9FB] overflow-hidden">
       {/* Brand Red Half Semi-Circle on the Left Edge */}
       <div
         className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-44 h-88 sm:w-60 sm:h-[480px] lg:w-72 lg:h-[580px] rounded-r-full bg-[#E53935] pointer-events-none z-0 shadow-2xl opacity-90"
@@ -62,15 +62,15 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
             </div>
           </motion.div>
 
-          {/* Right Column: 4 Individual Cards - Brought down by 25px, 20% larger, pointed corners */}
+          {/* Right Column: 4 Individual Cards - Positioned safely below the navbar */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 translate-y-[25px]"
+            className="lg:col-span-7 mt-8 lg:mt-0 pt-2 lg:pt-6"
           >
-            {/* 20% larger cards in a 2x2 grid with pointed (sharp) corners */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.08] origin-center">
+            {/* 20% larger cards in a 2x2 grid with pointed (sharp) corners - origin-top ensures cards never creep up behind the nav */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.06] origin-top">
               
               {/* Card 1 (Top-Left): Sports Physio Image Card (previously bottom-right) - Pointed Corners */}
               <div className="rounded-none overflow-hidden bg-slate-100 shadow-lg border-2 border-white aspect-[4/3] sm:aspect-square min-h-[260px] sm:min-h-[300px] relative group">
