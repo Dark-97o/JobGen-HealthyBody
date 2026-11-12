@@ -117,9 +117,9 @@ export const SelectSpecialistSection: React.FC<SelectSpecialistSectionProps> = (
             <div className="lg:col-span-4">
               <div className="rounded-[20px] overflow-hidden aspect-[4/4.4] w-full bg-white shadow-sm">
                 <img
-                  src="https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-13.jpg"
-                  alt="Physiotherapist consulting with a patient"
-                  className="w-full h-full object-cover object-center"
+                  src="https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/07/steph-winchester.jpg"
+                  alt="Senior Physiotherapist at The Healthy Body Company"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
             </div>

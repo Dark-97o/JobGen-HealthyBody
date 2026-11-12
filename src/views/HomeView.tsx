@@ -2,6 +2,7 @@ import React from 'react';
 import { HealisHero } from '../components/HealisHero';
 import { SpecialtiesMarquee } from '../components/SpecialtiesMarquee';
 import { FindCareSection } from '../components/FindCareSection';
+import { VideoShowcaseSection } from '../components/VideoShowcaseSection';
 import { SelectSpecialistSection } from '../components/SelectSpecialistSection';
 import { ComprehensiveCareSection } from '../components/ComprehensiveCareSection';
 import { MissionSection } from '../components/MissionSection';
@@ -35,7 +36,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
         onOpenBooking={onOpenBooking}
       />
 
-      {/* 4. Select Your Specialist, Book Instantly */}
+      {/* 3.5. Full-Width 80% Height Video Showcase with Transparent Blur Card */}
+      <VideoShowcaseSection />
+
+      {/* 4. Meet Our Specialists & Book Instantly */}
       <SelectSpecialistSection
         onSelectTeam={() => onSelectTab('team')}
         onOpenBooking={onOpenBooking}

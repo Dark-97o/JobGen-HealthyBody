@@ -125,7 +125,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Evidence-based hands-on manual therapy and personalized exercise recovery.',
     indications: ['Back & Neck Pain', 'Joint Stiffness', 'Sciatica & Nerve Impingement', 'Postural Strain'],
     features: ['45-min Initial 1-on-1 Assessment', 'Targeted Joint Mobilisation', 'Tailored Home Exercise Program'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-13.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/physiotherapy-9.jpg',
   },
   {
     id: 'sports-physiotherapy',
@@ -134,7 +134,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Rapid acute diagnosis, ligament rehab, and high-performance return-to-play.',
     indications: ['Hamstring & Groin Strains', 'ACL & Meniscus Tears', 'Ankle Sprains', 'Rotator Cuff Issues'],
     features: ['On-site Gym Strength Testing', 'Biomechanical Video Analysis', 'Sports Strapping & Taping'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/sports-physio-The-Healthy-Body-2304035057-scaled-e1719978691299.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/sports-physiotherapy.jpg',
   },
   {
     id: 'tmj-dysfunction-jaw-pain',
@@ -143,7 +143,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Specialized therapy for jaw clenching, temporomandibular clicking, and facial pain.',
     indications: ['Jaw Clicking & Locking', 'Bruxism / Teeth Grinding', 'Cervicogenic Headaches', 'Ear & Temple Pain'],
     features: ['Intra-oral Myofascial Release', 'Jaw Biomechanics Recalibration', 'Cranial & Neck Alignment'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-12-1-scaled-e1760677176342.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/TMJ-and-jaw-pain-scaled.jpg',
   },
   {
     id: 'orthopaedic-physio',
@@ -152,7 +152,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Pre- and post-surgical rehabilitation following joint replacements and reconstructions.',
     indications: ['Total Knee & Hip Replacements', 'Shoulder Rotator Cuff Surgery', 'Spinal Decompression', 'Ankle Reconstruction'],
     features: ['Surgeon Protocol Compliance', 'Swelling & Cryo Control', 'Gait & Balance Re-education'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/jordan-springs-284A0112-scaled.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/Orthopaedic-physiotherapy.jpg',
   },
   {
     id: 'work-injuries',
@@ -161,7 +161,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Streamlined Workers Compensation and CTP rehabilitation with zero out-of-pocket costs.',
     indications: ['Lifting & Repetitive Strain Injuries', 'Workplace Slips & Falls', 'CTP Motor Vehicle Accidents'],
     features: ['Direct Insurer Billing', 'Return-to-Work Coordination', 'SIRA Certificate of Capacity Support'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-14-scaled.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/work-injuries.jpg',
   },
   {
     id: 'shockwave-therapy',
@@ -170,7 +170,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Acoustic radial shockwave (ESWT) technology to resolve chronic, stubborn tendon pain.',
     indications: ['Plantar Fasciitis', 'Achilles Tendinopathy', 'Tennis & Golfer’s Elbow', 'Calcific Shoulder Tendinitis'],
     features: ['Swiss DolorClast Technology', 'Stimulates Cellular Collagen Renewal', 'Non-Invasive Breakthrough Relief'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/imageshockwave02-scaled.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/shock-wave-bigstock-Procedure-Shock-Wave-Therapy-A-324700759.jpg',
   },
   {
     id: 'massage-therapy',
@@ -179,7 +179,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Remedial, sports, and deep tissue soft-tissue restoration by qualified therapists.',
     indications: ['Severe Muscle Tightness', 'Postural Stress', 'Sports Recovery & Flushing', 'Pregnancy Tension'],
     features: ['Deep Tissue Myofascial Release', 'Trigger Point Therapy', 'Private Heated Treatment Rooms'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Physiotherapy-in-Penrith-scaled-e1761877313120.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/massage-therapy.jpg',
   },
   {
     id: 'vertigo-dizziness',
@@ -188,7 +188,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Vestibular rehabilitation and Epley repositioning maneuvers for BPPV and balance loss.',
     indications: ['BPPV (Spinning Sensation)', 'Vestibular Neuritis', 'Post-Concussion Balance Deficits', 'Cervical Dizziness'],
     features: ['Dix-Hallpike Diagnostic Maneuver', 'Canalith Repositioning Treatment', 'Vestibulo-Ocular Reflex Exercises'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-13.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/vertigo-and-dizziness-scaled.jpg',
   },
   {
     id: 'exercise-classes',
@@ -197,7 +197,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Physiotherapist-led clinical Pilates reformer sessions and small group mobility classes.',
     indications: ['Core Muscle Weakness', 'Chronic Lower Back Pain', 'Post-Rehabilitation Conditioning', 'Joint Hypermobility'],
     features: ['Reformer & Trapeze Equipment', 'Individualized Progression', 'Health Fund Rebates Apply'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/Sports-Physio-The-Healthy-Body.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/exercise-physiotherapy.jpg',
   },
   {
     id: 'healthy-mums',
@@ -206,7 +206,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Compassionate prenatal and postnatal pelvic floor, abdominal, and spinal care.',
     indications: ['Pelvic Girdle Pain', 'Abdominal Separation (Diastasis)', 'Postpartum Recovery', 'Pregnancy Back Ache'],
     features: ['Real-Time Ultrasound Biofeedback', 'Pelvic Stability Strengthening', 'Safe Return to Exercise Planning'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-12-1-scaled-e1760677176342.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/physio-3.jpg',
   },
   {
     id: 'ndis',
@@ -215,7 +215,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Empowering self-managed and plan-managed NDIS participants to achieve movement independence.',
     indications: ['Neurological Conditions', 'Physical Disabilities', 'Mobility & Transfer Limitations', 'Functional Capacity Deficits'],
     features: ['Detailed Functional Outcome Reports', 'Home & Clinic Sessions Available', 'Dedicated NDIS Coordinator'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/jordan-springs-284A0112-scaled.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/NDIS-scaled.jpg',
   },
   {
     id: 'paediatric-physiotherapy',
@@ -224,7 +224,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Gentle, supportive therapy for children, adolescents, and growing youth athletes.',
     indications: ['Sever’s Disease & Osgood-Schlatter', 'Growing Pains & Scoliosis', 'Youth Sports Injuries', 'Coordination & Gait Abnormalities'],
     features: ['Child-Friendly Clinical Environment', 'Family Education & Guidance', 'Age-Appropriate Exercises'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-14-scaled.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/pediatric-PKR_2068-copy.jpg',
   },
   {
     id: 'falls-prevention-mobility',
@@ -233,7 +233,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Evidence-based "Strong and Steady" balance training for seniors to prevent dangerous falls.',
     indications: ['Balance Uncertainty & Tripping', 'Post-Fracture Recovery', 'General Age-Related Deconditioning', 'Osteoporosis Care'],
     features: ['Validated Balance Score Testing', 'Safe Progressive Resistance Drills', 'Confidence Rebuilding'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-12-scaled-e1761877163453.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/08/falls-2.png',
   },
   {
     id: 'physio-cancer',
@@ -242,7 +242,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Oncology exercise therapy to combat fatigue, retain strength, and restore quality of life.',
     indications: ['Post-Chemotherapy Fatigue', 'Post-Mastectomy Shoulder Mobility', 'Cancer Cachexia & Weakness', 'Lymphedema Management'],
     features: ['PINC & STEEL Certified Protocols', 'Gentle Monitored Gym Sessions', 'Multidisciplinary Oncology Support'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Physiotherapy-in-Penrith-scaled-e1761877313120.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/Physio-and-cancer-scaled.jpg',
   },
   {
     id: 'respiratory-physiotherapy',
@@ -251,7 +251,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Airway clearance techniques, breathing pattern retraining, and chest mobility therapy.',
     indications: ['COPD & Emphysema', 'Bronchiectasis', 'Post-Pneumonia Lung Rehabilitation', 'Dysfunctional Breathing Patterns'],
     features: ['Active Cycle of Breathing (ACBT)', 'Inspiratory Muscle Training', 'Physical Exercise Prescription'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-13.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/repiratory-physiotherapy-scaled.jpg',
   },
   {
     id: 'telehealth',
@@ -260,7 +260,7 @@ export const REAL_SERVICES: RealService[] = [
     shortDesc: 'Secure, high-definition online video consultations from the comfort of your home.',
     indications: ['Remote & Regional Patients', 'Acute Flare-up Triage', 'Home Workstation Ergonomic Audits', 'Travel & Isolation Support'],
     features: ['Secure Encrypted Platform', 'Visual Movement Diagnostics', 'Digital Exercise App Delivery'],
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/Sports-Physio-The-Healthy-Body.jpg',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/telehealth-284A0133.jpg',
   },
 ];
 
