@@ -70,9 +70,9 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             >
-              {/* 4 Cards in 2x2 grid (increased by 10px each, flat / no shadow) with pointed corners & interactive central locator circle */}
+              {/* 4 Cards in 2x2 grid (increased by ~10% in size, flat / no shadow) with pointed corners & interactive central locator circle */}
               <div
-                className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.06] origin-top"
+                className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.11] origin-top"
                 onMouseLeave={() => setShowLocations(false)}
               >
                 {/* Center White Circle with Looping Growing/Shrinking & Color Changing Locator Icon - No outer ring, no shadow, no text pill */}
@@ -103,7 +103,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                 </div>
 
                 {/* Card 1 (Top-Left): Sports Physio <-> Penrith Flagship */}
-                <div className="rounded-none overflow-hidden bg-slate-100 border-2 border-white min-h-[260px] sm:min-h-[300px] h-[260px] sm:h-[300px] relative group shadow-none">
+                <div className="rounded-none overflow-hidden bg-slate-100 border-2 border-white min-h-[275px] sm:min-h-[315px] h-[275px] sm:h-[315px] relative group shadow-none">
                   <AnimatePresence mode="wait">
                     {!showLocations ? (
                       <motion.div
@@ -176,7 +176,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                 </div>
 
                 {/* Card 2 (Top-Right): Vibrant Green Card <-> Caringbah */}
-                <div className="rounded-none bg-[#7DBE47] text-white border-2 border-white min-h-[260px] sm:min-h-[300px] h-[260px] sm:h-[300px] relative overflow-hidden group shadow-none">
+                <div className="rounded-none bg-[#7DBE47] text-white border-2 border-white min-h-[275px] sm:min-h-[315px] h-[275px] sm:h-[315px] relative overflow-hidden group shadow-none">
                   <AnimatePresence mode="wait">
                     {!showLocations ? (
                       <motion.div
@@ -264,7 +264,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                 </div>
 
                 {/* Card 3 (Bottom-Left): Vibrant Cyan Card <-> Jordan Springs */}
-                <div className="rounded-none bg-[#00B4D8] text-white border-2 border-white min-h-[260px] sm:min-h-[300px] h-[260px] sm:h-[300px] relative overflow-hidden group shadow-none">
+                <div className="rounded-none bg-[#00B4D8] text-white border-2 border-white min-h-[275px] sm:min-h-[315px] h-[275px] sm:h-[315px] relative overflow-hidden group shadow-none">
                   <AnimatePresence mode="wait">
                     {!showLocations ? (
                       <motion.div
@@ -351,7 +351,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                 </div>
 
                 {/* Card 4 (Bottom-Right): Red Uniform Card <-> Mount Annan */}
-                <div className="rounded-none overflow-hidden bg-slate-100 border-2 border-white min-h-[260px] sm:min-h-[300px] h-[260px] sm:h-[300px] relative group shadow-none">
+                <div className="rounded-none overflow-hidden bg-slate-100 border-2 border-white min-h-[275px] sm:min-h-[315px] h-[275px] sm:h-[315px] relative group shadow-none">
                   <AnimatePresence mode="wait">
                     {!showLocations ? (
                       <motion.div
