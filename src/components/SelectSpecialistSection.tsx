@@ -15,7 +15,7 @@ export const SelectSpecialistSection: React.FC<SelectSpecialistSectionProps> = (
   const featuredPractitioners = REAL_TEAM.slice(0, 4);
 
   return (
-    <section className="py-20 sm:py-28 bg-white border-y border-black/5">
+    <section className="py-20 sm:py-28 bg-[#FAF6EE] border-y border-[#E8E1D3]">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Visual: Lead Clinician Reviewing Patient Progress */}
@@ -51,10 +51,6 @@ export const SelectSpecialistSection: React.FC<SelectSpecialistSectionProps> = (
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-7 order-1 lg:order-2 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 bg-[#F0F2F5] px-4 py-1.5 rounded-pill text-xs font-medium text-healis-blue tracking-tight">
-              <span>The Healthy Body Solution</span>
-            </div>
-
             <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.25] sm:leading-[1.2]">
               Select your specialist, book <span className="text-healis-blue font-medium">instantly</span>
             </h2>

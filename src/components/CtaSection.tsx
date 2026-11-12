@@ -7,7 +7,7 @@ interface CtaSectionProps {
 
 export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenBooking }) => {
   return (
-    <section className="py-12 sm:py-20 bg-white">
+    <section className="py-12 sm:py-20 bg-[#FAF6EE]">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         <div className="rounded-[2.5rem] bg-healis-dark text-white p-8 sm:p-14 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
           {/* Subtle Ambient Glow */}

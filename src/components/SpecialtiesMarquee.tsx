@@ -19,7 +19,7 @@ export const SpecialtiesMarquee: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-white py-6 border-y border-black/5 overflow-hidden">
+    <div className="w-full bg-[#F4EFE4] py-6 border-y border-[#E8E1D3] overflow-hidden">
       <div className="group relative flex w-full overflow-hidden select-none">
         {/* Animated Marquee Row */}
         <div className="flex shrink-0 items-center justify-around gap-8 min-w-full animate-marquee group-hover:[animation-play-state:paused]">

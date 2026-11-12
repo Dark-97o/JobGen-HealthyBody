@@ -9,7 +9,7 @@ interface HomeBlogSectionProps {
 
 export const HomeBlogSection: React.FC<HomeBlogSectionProps> = ({ onSelectBlog }) => {
   return (
-    <section className="py-20 sm:py-28 bg-[#F8F9FB] border-t border-black/5">
+    <section className="py-20 sm:py-28 bg-[#FAF6EE] border-t border-[#E8E1D3]">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -18,9 +18,6 @@ export const HomeBlogSection: React.FC<HomeBlogSectionProps> = ({ onSelectBlog }
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-2xl mx-auto mb-16 space-y-4"
         >
-          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-pill text-xs font-medium text-healis-blue tracking-tight shadow-xs border border-black/5">
-            <span>The Healthy Body Solution</span>
-          </div>
           <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.25] sm:leading-[1.2]">
             Your guide to <span className="text-healis-blue font-medium">health</span>
           </h2>

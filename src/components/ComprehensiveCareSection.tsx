@@ -25,7 +25,7 @@ export const ComprehensiveCareSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 sm:py-28 bg-[#F8F9FB]">
+    <section className="py-20 sm:py-28 bg-[#F4EFE4]">
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left: Heading & Review Proof */}
@@ -36,10 +36,6 @@ export const ComprehensiveCareSection: React.FC = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-pill text-xs font-medium text-healis-blue tracking-tight shadow-xs border border-black/5">
-              <span>The Healthy Body Solution</span>
-            </div>
-
             <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.25] sm:leading-[1.2]">
               Comprehensive care for every stage of <span className="text-healis-blue font-medium">life</span>
             </h2>
