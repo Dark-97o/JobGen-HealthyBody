@@ -63,16 +63,16 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
             </div>
           </motion.div>
 
-          {/* Right Column: 4 Individual Cards - Moved up by 50px on desktop */}
-          <div className="lg:col-span-7 mt-8 lg:mt-0 lg:-translate-y-[20px]">
+          {/* Right Column: 4 Individual Cards - Moved up by 25px and scaled +5% on desktop */}
+          <div className="lg:col-span-7 mt-8 lg:mt-0 lg:-translate-y-[45px]">
             <motion.div
               initial={{ opacity: 0, scale: 0.96, x: 20 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             >
-              {/* 4 Cards in 2x2 grid (increased by ~10% in size, flat / no shadow) with pointed corners & interactive central locator circle */}
+              {/* 4 Cards in 2x2 grid (increased by +5% in size, flat / no shadow) with pointed corners & interactive central locator circle */}
               <div
-                className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.11] origin-top"
+                className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.16] origin-top"
                 onMouseLeave={() => setShowLocations(false)}
               >
                 {/* Center White Circle with Looping Growing/Shrinking & Color Changing Locator Icon - No outer ring, no shadow, no text pill */}
