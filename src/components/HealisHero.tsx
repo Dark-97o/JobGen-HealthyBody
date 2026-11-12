@@ -63,8 +63,8 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
             </div>
           </motion.div>
 
-          {/* Right Column: 4 Individual Cards - Moved up by 25px and scaled +5% on desktop */}
-          <div className="lg:col-span-7 mt-8 lg:mt-0 lg:-translate-y-[45px]">
+          {/* Right Column: 4 Individual Cards - Moved up by 25px on desktop */}
+          <div className="lg:col-span-7 mt-8 lg:mt-0 lg:-translate-y-[70px]">
             <motion.div
               initial={{ opacity: 0, scale: 0.96, x: 20 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}

@@ -124,7 +124,7 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
               <div className="flex flex-col gap-4 lg:gap-5">
                 <div
                   onClick={onSelectServices}
-                  className="rounded-[1.75rem] overflow-hidden bg-[#EAE3D2] h-[300px] sm:h-[330px] relative group cursor-pointer"
+                  className="rounded-[1.75rem] overflow-hidden bg-[#EAE3D2] h-[320px] sm:h-[350px] relative group cursor-pointer"
                 >
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -147,7 +147,7 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
 
                 <div
                   onClick={onOpenBooking}
-                  className="rounded-[1.75rem] bg-[#FAF6EE] hover:bg-[#EFE8D8] border border-[#E8E1D3] p-6 flex flex-col justify-between min-h-[235px] transition-colors duration-300 cursor-pointer group overflow-hidden"
+                  className="rounded-[1.75rem] bg-[#FAF6EE] hover:bg-[#EFE8D8] border border-[#E8E1D3] p-6 flex flex-col justify-between min-h-[255px] transition-colors duration-300 cursor-pointer group overflow-hidden"
                 >
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -178,7 +178,7 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
               <div className="flex flex-col gap-4 lg:gap-5">
                 <div
                   onClick={onSelectServices}
-                  className="rounded-[1.75rem] bg-[#FAF6EE] hover:bg-[#EFE8D8] border border-[#E8E1D3] p-6 flex flex-col justify-between min-h-[235px] transition-colors duration-300 cursor-pointer group overflow-hidden"
+                  className="rounded-[1.75rem] bg-[#FAF6EE] hover:bg-[#EFE8D8] border border-[#E8E1D3] p-6 flex flex-col justify-between min-h-[255px] transition-colors duration-300 cursor-pointer group overflow-hidden"
                 >
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -206,7 +206,7 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
 
                 <div
                   onClick={onOpenBooking}
-                  className="rounded-[1.75rem] overflow-hidden bg-[#EAE3D2] h-[300px] sm:h-[330px] relative group cursor-pointer"
+                  className="rounded-[1.75rem] overflow-hidden bg-[#EAE3D2] h-[320px] sm:h-[350px] relative group cursor-pointer"
                 >
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -232,7 +232,7 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
               <div className="flex flex-col gap-4 lg:gap-5">
                 <div
                   onClick={onSelectServices}
-                  className="rounded-[1.75rem] overflow-hidden bg-[#EAE3D2] h-[300px] sm:h-[330px] relative group cursor-pointer"
+                  className="rounded-[1.75rem] overflow-hidden bg-[#EAE3D2] h-[320px] sm:h-[350px] relative group cursor-pointer"
                 >
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -255,7 +255,7 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
 
                 <div
                   onClick={onOpenBooking}
-                  className="rounded-[1.75rem] bg-[#FAF6EE] hover:bg-[#EFE8D8] border border-[#E8E1D3] p-6 flex flex-col justify-between min-h-[235px] transition-colors duration-300 cursor-pointer group overflow-hidden"
+                  className="rounded-[1.75rem] bg-[#FAF6EE] hover:bg-[#EFE8D8] border border-[#E8E1D3] p-6 flex flex-col justify-between min-h-[255px] transition-colors duration-300 cursor-pointer group overflow-hidden"
                 >
                   <AnimatePresence mode="wait">
                     <motion.div
