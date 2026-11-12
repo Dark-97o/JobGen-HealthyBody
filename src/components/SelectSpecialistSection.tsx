@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, FileText, ListFilter, Quote } from 'lucide-react';
+import { ArrowUpRight, Quote } from 'lucide-react';
 import { REAL_TEAM } from '../data/thbcData';
 
 interface SelectSpecialistSectionProps {
@@ -126,13 +126,7 @@ export const SelectSpecialistSection: React.FC<SelectSpecialistSectionProps> = (
 
             {/* Right Content */}
             <div className="lg:col-span-8 flex flex-col justify-center">
-              <div>
-                <span className="inline-flex items-center bg-white text-healis-blue text-sm font-medium px-5 py-2 rounded-full shadow-sm">
-                  The Healthy Body Co.
-                </span>
-              </div>
-
-              <h3 className="font-exo text-3xl sm:text-4xl lg:text-[46px] font-semibold text-healis-dark tracking-tight leading-[1.12] mt-6">
+              <h3 className="font-exo text-3xl sm:text-4xl lg:text-[46px] font-semibold text-healis-dark tracking-tight leading-[1.12]">
                 Select your specialist,
                 <br />
                 book <span className="text-healis-blue">instantly</span>
@@ -141,40 +135,6 @@ export const SelectSpecialistSection: React.FC<SelectSpecialistSectionProps> = (
               <p className="text-base sm:text-[17px] text-healis-grey font-normal leading-relaxed max-w-2xl mt-4">
                 Easily search for specialists based on your needs. Our user-friendly platform allows you to book appointments in just a few clicks.
               </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-9">
-                <button
-                  type="button"
-                  onClick={onSelectTeam}
-                  className="text-left group/feat focus:outline-none"
-                >
-                  <div className="w-12 h-12 rounded-full bg-healis-blue text-white flex items-center justify-center shadow-sm mb-4 transition-transform duration-300 group-hover/feat:scale-105">
-                    <ListFilter className="w-5 h-5" />
-                  </div>
-                  <h4 className="font-exo text-lg font-semibold text-healis-dark mb-1.5 group-hover/feat:text-healis-blue transition-colors">
-                    Search filters
-                  </h4>
-                  <p className="text-sm text-healis-grey leading-relaxed">
-                    Choose your specialty and location to find the right clinician for you.
-                  </p>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={onOpenBooking}
-                  className="text-left group/feat focus:outline-none"
-                >
-                  <div className="w-12 h-12 rounded-full bg-healis-blue text-white flex items-center justify-center shadow-sm mb-4 transition-transform duration-300 group-hover/feat:scale-105">
-                    <FileText className="w-5 h-5" />
-                  </div>
-                  <h4 className="font-exo text-lg font-semibold text-healis-dark mb-1.5 group-hover/feat:text-healis-blue transition-colors">
-                    Results display
-                  </h4>
-                  <p className="text-sm text-healis-grey leading-relaxed">
-                    View detailed profiles including photos, specialties, and locations of available specialists.
-                  </p>
-                </button>
-              </div>
             </div>
           </div>
         </motion.div>
