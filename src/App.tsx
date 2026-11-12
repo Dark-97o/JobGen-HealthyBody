@@ -9,7 +9,6 @@ import { BlogView } from './views/BlogView';
 import { FaqView } from './views/FaqView';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
-import { FloatingBar } from './components/FloatingBar';
 
 export const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<string>('home');
@@ -21,7 +20,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-slate-800 font-sans selection:bg-forest-900 selection:text-white relative">
+    <div className="min-h-screen bg-[#FAF6EE] text-healis-dark font-sans selection:bg-healis-blue selection:text-white relative">
       {/* Top Navbar with Official Brand Logo */}
       <Navbar
         currentTab={currentTab}
@@ -75,9 +74,6 @@ export const App: React.FC = () => {
 
       {/* Footer with Official White Logo & Full Directory */}
       <Footer onSelectTab={handleSelectTab} />
-
-      {/* Sticky Floating Quick Contact Pill */}
-      <FloatingBar onOpenBooking={() => setIsBookingOpen(true)} />
 
       {/* Streamlined Booking Modal */}
       <BookingModal

@@ -9,8 +9,8 @@ interface HomeBlogSectionProps {
 
 export const HomeBlogSection: React.FC<HomeBlogSectionProps> = ({ onSelectBlog }) => {
   return (
-    <section className="py-20 sm:py-28 bg-[#FAF6EE] border-t border-[#E8E1D3]">
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-8">
+    <section className="min-h-screen flex items-center py-20 sm:py-24 bg-[#FAF6EE] border-t border-[#E8E1D3]">
+      <div className="max-w-[1240px] w-full mx-auto px-6 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
