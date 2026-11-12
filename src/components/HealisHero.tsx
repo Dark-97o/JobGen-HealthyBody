@@ -31,7 +31,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
             className="lg:col-span-5 space-y-6 text-left"
           >
             {/* Main Headline on the Left in Exo 2 font */}
-            <h1 className="font-exo text-[44px] sm:text-[56px] lg:text-[68px] font-bold text-healis-dark tracking-tight leading-[1.02] uppercase select-none">
+            <h1 className="font-exo text-[50px] sm:text-[62px] lg:text-[74px] font-bold text-healis-dark tracking-tight leading-[1.02] uppercase select-none">
               Live your best <br />
               active life, <br />
               <span className="text-healis-blue">always!</span>
