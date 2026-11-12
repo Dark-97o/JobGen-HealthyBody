@@ -21,7 +21,7 @@ interface FindCareSectionProps {
 const getServiceIcon = (index: number) => {
   const icons = [Stethoscope, Activity, Zap, HeartPulse, ShieldCheck, Sparkles];
   const Icon = icons[index % icons.length];
-  return <Icon className="w-4 h-4" />;
+  return <Icon className="w-5 h-5" />;
 };
 
 export const FindCareSection: React.FC<FindCareSectionProps> = ({
@@ -49,15 +49,13 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
     setStartIndex((prev) => (prev + 3) % totalServices);
   };
 
-  const visibleServices = [
-    REAL_SERVICES[startIndex % totalServices],
-    REAL_SERVICES[(startIndex + 1) % totalServices],
-    REAL_SERVICES[(startIndex + 2) % totalServices],
-  ];
+  const serviceA = REAL_SERVICES[startIndex % totalServices];
+  const serviceB = REAL_SERVICES[(startIndex + 1) % totalServices];
+  const serviceC = REAL_SERVICES[(startIndex + 2) % totalServices];
 
   return (
     <section className="py-20 sm:py-28 bg-[#F4EFE4] border-y border-[#E8E1D3]">
-      <div className="max-w-[1300px] mx-auto px-6 sm:px-8">
+      <div className="max-w-[1340px] mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -111,7 +109,7 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
             </div>
           </motion.div>
 
-          {/* Right 3-Card Row: 3 Services Shown at a Time (Auto-rotates every 2s) */}
+          {/* Right Staggered 3-Column Bento Grid: 6 Cards (3 Services: Image + Text/Icon each) */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -121,56 +119,168 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-              {visibleServices.map((service, idx) => (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5 items-stretch">
+              {/* Column 1 (Service 1): Top Image Card + Bottom Text/Icon Card */}
+              <div className="flex flex-col gap-4 lg:gap-5">
                 <div
-                  key={idx}
-                  onClick={idx === 1 ? onOpenBooking : onSelectServices}
-                  className="rounded-[1.75rem] overflow-hidden bg-[#FAF6EE] hover:bg-[#EFE8D8] border border-[#E8E1D3] h-[340px] sm:h-[360px] flex flex-col justify-between transition-colors duration-300 cursor-pointer group"
+                  onClick={onSelectServices}
+                  className="rounded-[1.75rem] overflow-hidden bg-[#EAE3D2] h-[300px] sm:h-[330px] relative group cursor-pointer"
                 >
                   <AnimatePresence mode="wait">
                     <motion.div
-                      key={service.id}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.35 }}
-                      className="w-full h-full flex flex-col justify-between"
+                      key={serviceA.id + '-img'}
+                      initial={{ opacity: 0.4, scale: 1.03 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0.4 }}
+                      transition={{ duration: 0.4 }}
+                      className="w-full h-full relative"
                     >
-                      {/* Top Service Image */}
-                      <div className="relative">
-                        <div className="h-[175px] w-full overflow-hidden bg-[#EAE3D2]">
-                          <img
-                            src={service.image}
-                            alt={service.title}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                          />
-                        </div>
-                        <div className="absolute -bottom-5 left-5 w-10 h-10 rounded-full bg-healis-blue text-white flex items-center justify-center border-2 border-[#FAF6EE] z-10">
-                          {getServiceIcon(startIndex + idx)}
-                        </div>
+                      <img
+                        src={serviceA.image}
+                        alt={serviceA.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1C2214]/60 via-transparent to-transparent" />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                <div
+                  onClick={onOpenBooking}
+                  className="rounded-[1.75rem] bg-[#FAF6EE] hover:bg-[#EFE8D8] border border-[#E8E1D3] p-6 flex flex-col justify-between min-h-[235px] transition-colors duration-300 cursor-pointer group overflow-hidden"
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={serviceA.id + '-card'}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.35 }}
+                      className="flex flex-col justify-between h-full"
+                    >
+                      <div className="w-11 h-11 rounded-full bg-healis-blue text-white flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-105">
+                        {getServiceIcon(startIndex)}
                       </div>
-
-                      {/* Bottom Service Text */}
-                      <div className="p-5 pt-7 flex-1 flex flex-col justify-between">
-                        <div className="space-y-2">
-                          <h3 className="font-exo text-lg font-semibold text-healis-dark tracking-tight line-clamp-1">
-                            {service.title}
-                          </h3>
-                          <p className="text-xs sm:text-sm text-healis-grey font-normal leading-relaxed line-clamp-3">
-                            {service.shortDesc}
-                          </p>
-                        </div>
-
-                        <div className="pt-2 flex items-center gap-1 text-xs font-semibold text-healis-blue">
-                          <span>Learn more</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                        </div>
+                      <div className="space-y-1.5">
+                        <h3 className="font-exo text-lg font-medium text-healis-dark tracking-tight line-clamp-1">
+                          {serviceA.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-healis-grey font-normal leading-relaxed line-clamp-3">
+                          {serviceA.shortDesc}
+                        </p>
                       </div>
                     </motion.div>
                   </AnimatePresence>
                 </div>
-              ))}
+              </div>
+
+              {/* Column 2 (Service 2): Top Text/Icon Card + Bottom Image Card */}
+              <div className="flex flex-col gap-4 lg:gap-5">
+                <div
+                  onClick={onSelectServices}
+                  className="rounded-[1.75rem] bg-[#FAF6EE] hover:bg-[#EFE8D8] border border-[#E8E1D3] p-6 flex flex-col justify-between min-h-[235px] transition-colors duration-300 cursor-pointer group overflow-hidden"
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={serviceB.id + '-card'}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.35 }}
+                      className="flex flex-col justify-between h-full"
+                    >
+                      <div className="w-11 h-11 rounded-full bg-healis-blue text-white flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-105">
+                        {getServiceIcon(startIndex + 1)}
+                      </div>
+                      <div className="space-y-1.5">
+                        <h3 className="font-exo text-lg font-medium text-healis-dark tracking-tight line-clamp-1">
+                          {serviceB.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-healis-grey font-normal leading-relaxed line-clamp-3">
+                          {serviceB.shortDesc}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                <div
+                  onClick={onOpenBooking}
+                  className="rounded-[1.75rem] overflow-hidden bg-[#EAE3D2] h-[300px] sm:h-[330px] relative group cursor-pointer"
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={serviceB.id + '-img'}
+                      initial={{ opacity: 0.4, scale: 1.03 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0.4 }}
+                      transition={{ duration: 0.4 }}
+                      className="w-full h-full relative"
+                    >
+                      <img
+                        src={serviceB.image}
+                        alt={serviceB.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1C2214]/60 via-transparent to-transparent" />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
+
+              {/* Column 3 (Service 3): Top Image Card + Bottom Text/Icon Card */}
+              <div className="flex flex-col gap-4 lg:gap-5">
+                <div
+                  onClick={onSelectServices}
+                  className="rounded-[1.75rem] overflow-hidden bg-[#EAE3D2] h-[300px] sm:h-[330px] relative group cursor-pointer"
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={serviceC.id + '-img'}
+                      initial={{ opacity: 0.4, scale: 1.03 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0.4 }}
+                      transition={{ duration: 0.4 }}
+                      className="w-full h-full relative"
+                    >
+                      <img
+                        src={serviceC.image}
+                        alt={serviceC.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1C2214]/60 via-transparent to-transparent" />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                <div
+                  onClick={onOpenBooking}
+                  className="rounded-[1.75rem] bg-[#FAF6EE] hover:bg-[#EFE8D8] border border-[#E8E1D3] p-6 flex flex-col justify-between min-h-[235px] transition-colors duration-300 cursor-pointer group overflow-hidden"
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={serviceC.id + '-card'}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.35 }}
+                      className="flex flex-col justify-between h-full"
+                    >
+                      <div className="w-11 h-11 rounded-full bg-healis-blue text-white flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-105">
+                        {getServiceIcon(startIndex + 2)}
+                      </div>
+                      <div className="space-y-1.5">
+                        <h3 className="font-exo text-lg font-medium text-healis-dark tracking-tight line-clamp-1">
+                          {serviceC.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-healis-grey font-normal leading-relaxed line-clamp-3">
+                          {serviceC.shortDesc}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
