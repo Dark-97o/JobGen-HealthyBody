@@ -413,40 +413,154 @@ export const REAL_TEAM: RealTeamMember[] = [
 
 export const REAL_BLOG_POSTS: RealBlogPost[] = [
   {
-    id: 'tight-hip-flexor',
-    title: 'Tight Hip Flexor? Don’t Miss a Bone Stress Injury!',
-    category: 'Sports Medicine',
-    date: 'Recent Article',
+    id: 'how-many-ways-did-you-move-today',
+    title: 'How Many Ways Did You Move Today?',
+    category: 'Movement & Longevity',
+    date: 'Nov 10, 2026',
     readTime: '4 min read',
-    excerpt: 'Persistent deep groin or anterior hip pain in runners is frequently misdiagnosed as simple hip flexor tightness. How to differentiate soft tissue strain from femoral neck stress reactions.',
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/sports-physio-The-Healthy-Body-2304035057-scaled-e1719978691299.jpg',
+    excerpt:
+      'You can still do stairs. Nobody decides to become less capable overnight—it happens in small trades. Discover how daily varied movement keeps joints resilient.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/11/shutterstock_2668505205.jpg',
   },
   {
-    id: 'corked-thigh',
-    title: 'Corked Thigh: Symptoms, Treatment and Safe Return to Sport',
-    category: 'Injury Guide',
-    date: 'Recent Article',
+    id: 'tight-hip-flexor-dont-miss-a-stress-injury',
+    title: "Tight Hip Flexor? Don't Miss a Bone Stress Injury!",
+    category: 'Running Health',
+    date: 'Nov 09, 2026',
     readTime: '5 min read',
-    excerpt: 'Quad hematomas from direct impact on the rugby pitch require immediate acute management. Why stretching early can cause myositis ossificans and what evidence-based steps to follow.',
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/Sports-Physio-The-Healthy-Body.jpg',
+    excerpt:
+      'Persistent front-of-hip tightness in runners is often blamed on hip flexors, yet can signal a femoral neck or pelvic bone stress injury requiring prompt assessment.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/11/shutterstock_2437833945.jpg',
   },
   {
-    id: 'acl-lessons',
-    title: 'ACL Rehabilitation: 4 Lessons From a Physio Who’s Been Through It',
-    category: 'Surgical Recovery',
-    date: 'Clinical Insight',
-    readTime: '6 min read',
-    excerpt: 'Having undergone knee reconstruction firsthand, our clinical team breaks down the psychological hurdles, extension milestones, and hop testing criteria before returning to competitive matches.',
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/jordan-springs-284A0112-scaled.jpg',
+    id: 'corked-thigh-symptoms-treatment-and-return-to-sport',
+    title: 'Corked Thigh: Symptoms, Treatment and Return to Sport',
+    category: 'Injury Guide',
+    date: 'Aug 13, 2026',
+    readTime: '5 min read',
+    excerpt:
+      'A cork is one of the most common contact sport injuries. Learn why early aggressive stretching can worsen bleeding and how structured physiotherapy speeds return to play.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/08/shutterstock_5031961.jpg',
+  },
+  {
+    id: 'groin-pain-in-sport-it-could-be-osteitis-pubis',
+    title: 'Groin Pain in Sport? It Could Be Osteitis Pubis',
+    category: 'Sports Physio',
+    date: 'Jul 07, 2026',
+    readTime: '5 min read',
+    excerpt:
+      'Deep aching at the front of the pelvis that warms up during training and flares afterwards can indicate osteitis pubis. Explore load management and adductor rehab.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/07/Osteitis-Pubis-The-Healthy-Body-Company.jpg',
+  },
+  {
+    id: 'lower-back-pain-in-children',
+    title: 'Lower Back Pain in Children – What Does It Mean and What Should You Do?',
+    category: 'Paediatric Physio',
+    date: 'May 20, 2026',
+    readTime: '5 min read',
+    excerpt:
+      'For young gymnasts, cricketers, and active kids, persistent lower back pain warrants careful screening for pars stress injuries and guided load recovery.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/05/back-pain-child-gymnastics.jpg',
+  },
+  {
+    id: 'physiotherapy-workshops-for-students-build-real-clinical-skills-confidence-early',
+    title: 'Physiotherapy Workshops for Students: Build Real Clinical Skills & Confidence Early',
+    category: 'Clinical Education',
+    date: 'Apr 22, 2026',
+    readTime: '4 min read',
+    excerpt:
+      'Bridging the gap between university anatomy theory and real-world hands-on patient assessment through our Physiotherapy Essentials student workshops.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/04/DSCF2028-scaled-e1776832196563.jpeg',
   },
   {
     id: 'outer-knee-pain',
     title: 'Outer Knee Pain When Running? It Could Be ITB Syndrome',
     category: 'Running Clinic',
-    date: 'Running Health',
+    date: 'Apr 20, 2026',
     readTime: '4 min read',
-    excerpt: 'Iliotibial band friction syndrome is primarily a compressive tendon condition driven by pelvic drop and cadence issues. Learn why foam rolling your outer thigh often fails.',
-    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-13.jpg',
+    excerpt:
+      'Iliotibial band syndrome is a compressive load issue on the outside of the knee. Learn why hip stability and running cadence matter more than foam rolling.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2021/11/iliotibial-band-syndrome.jpg',
+  },
+  {
+    id: 'four-lessons-i-learned-from-both-sides-of-acl-rehabilitation',
+    title: 'ACL Rehabilitation: 4 Lessons From a Physio Who’s Been Through It',
+    category: 'Surgical Recovery',
+    date: 'Apr 13, 2026',
+    readTime: '6 min read',
+    excerpt:
+      'Having undergone three ACL reconstructions firsthand, our physiotherapist shares the physical milestones, patience, and strength benchmarks behind lasting recovery.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/04/shutterstock_2559965813.jpg',
+  },
+  {
+    id: 'gamers-wrist-ecu-tendinopathy-causes-symptoms-and-treatment',
+    title: 'Gamers Wrist (ECU Tendinopathy): Causes, Symptoms and Treatment',
+    category: 'Hand & Wrist',
+    date: 'Apr 04, 2026',
+    readTime: '4 min read',
+    excerpt:
+      'Pain along the pinky side of the wrist after long desk, gaming, or gym sessions is frequently ECU tendinopathy. Discover ergonomic fixes and tendon loading.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/04/Gamers-Wrist-Physiotherapy.jpg',
+  },
+  {
+    id: 'dry-needling-2',
+    title: 'Dry Needling in Physiotherapy',
+    category: 'Treatment Guide',
+    date: 'Mar 09, 2026',
+    readTime: '4 min read',
+    excerpt:
+      'How sterile dry needling targets myofascial trigger points to reduce muscle tension, restore range of motion, and complement hands-on physiotherapy.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/03/physio-in-penrith-dry-needling.jpg',
+  },
+  {
+    id: 'concussion-if-in-doubt-sit-them-out',
+    title: 'Concussion: If in doubt, sit them out!',
+    category: 'Sports Safety',
+    date: 'Feb 10, 2026',
+    readTime: '5 min read',
+    excerpt:
+      'A practical guide for parents, coaches, and athletes on recognising concussion symptoms early and following safe graded return-to-sport protocols.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/03/bj-pearce-Ag36XuTuARM-unsplash-scaled-1.jpg',
+  },
+  {
+    id: 'physio-and-diabetes',
+    title: 'Physio and Diabetes: How Exercise Helps Manage Type 2 Diabetes',
+    category: 'Chronic Care',
+    date: 'Nov 12, 2025',
+    readTime: '5 min read',
+    excerpt:
+      'Safe, progressive resistance and aerobic exercise improves insulin sensitivity, cardiovascular health, and joint confidence across every age group.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2015/07/Diabetes-and-Physio-1-1-scaled.jpg',
+  },
+  {
+    id: 'tennis-elbow-explained-causes-symptoms-physiotherapy-treatment',
+    title: 'Tennis Elbow Explained: Causes, Symptoms & Physiotherapy Treatment',
+    category: 'Tendon Rehab',
+    date: 'Oct 29, 2025',
+    readTime: '5 min read',
+    excerpt:
+      'Lateral epicondylalgia affects desk workers and tradespeople far more often than tennis players. Learn how eccentric loading and shockwave therapy resolve it.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/tennis-elbow-and-physiotherapy-in-penrith.jpg',
+  },
+  {
+    id: 'small-steps',
+    title: 'How Small Breaks and Movement Can Transform Our Minds and Bodies',
+    category: 'Workplace Health',
+    date: 'Oct 28, 2025',
+    readTime: '4 min read',
+    excerpt:
+      'Short intentional movement breaks throughout the workday counteract prolonged sitting stiffness, boost energy, and protect spinal health.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Physio-in-Caringbah-scaled-e1761639907271.jpg',
+  },
+  {
+    id: 'acl-what-is-it',
+    title: 'What Is an ACL Injury? Symptoms, Causes and What to Do Next',
+    category: 'Knee Rehab',
+    date: 'Sep 29, 2025',
+    readTime: '5 min read',
+    excerpt:
+      'Understanding anterior cruciate ligament tears, early swelling control, surgical vs non-surgical pathways, and evidence-based knee rehabilitation.',
+    image: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2016/01/physio-and-ACL-injury-2.jpg',
   },
 ];
 

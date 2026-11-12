@@ -12,11 +12,13 @@ import { CtaSection } from '../components/CtaSection';
 
 interface HomeViewProps {
   onSelectTab: (tab: string) => void;
+  onSelectService: (serviceId: string) => void;
   onOpenBooking: () => void;
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({
   onSelectTab,
+  onSelectService,
   onOpenBooking,
 }) => {
   return (
@@ -33,6 +35,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* 3. Services Showcase Section */}
       <FindCareSection
         onSelectServices={() => onSelectTab('services')}
+        onSelectService={onSelectService}
         onOpenBooking={onOpenBooking}
       />
 

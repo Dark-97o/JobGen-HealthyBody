@@ -4,10 +4,11 @@ import { ArrowUpRight, Check } from 'lucide-react';
 import { REAL_SERVICES } from '../data/thbcData';
 
 interface ServicesViewProps {
+  onSelectService: (serviceId: string) => void;
   onOpenBooking: () => void;
 }
 
-export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => {
+export const ServicesView: React.FC<ServicesViewProps> = ({ onSelectService, onOpenBooking }) => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
   const categories = [
@@ -76,7 +77,10 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => 
               className="bg-white rounded-[2rem] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between group"
             >
               <div>
-                <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
+                <div
+                  onClick={() => onSelectService(service.id)}
+                  className="aspect-[16/10] overflow-hidden bg-slate-100 relative cursor-pointer"
+                >
                   <img
                     src={service.image}
                     alt={service.title}
@@ -85,9 +89,13 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => 
                 </div>
 
                 <div className="p-7 space-y-3">
-                  <h3 className="text-xl font-medium text-slate-900 group-hover:text-healis-blue transition-colors">
+                  <button
+                    type="button"
+                    onClick={() => onSelectService(service.id)}
+                    className="text-left text-xl font-medium text-slate-900 group-hover:text-healis-blue transition-colors"
+                  >
                     {service.title}
-                  </h3>
+                  </button>
                   <p className="text-xs sm:text-sm text-healis-grey font-normal leading-relaxed">
                     {service.shortDesc}
                   </p>
@@ -117,11 +125,19 @@ export const ServicesView: React.FC<ServicesViewProps> = ({ onOpenBooking }) => 
                 </div>
               </div>
 
-              <div className="p-7 pt-0">
+              <div className="p-7 pt-0 flex items-center gap-2.5">
+                <button
+                  type="button"
+                  onClick={() => onSelectService(service.id)}
+                  className="flex-1 py-3.5 rounded-pill bg-[#F3F5F8] hover:bg-healis-dark text-healis-dark hover:text-white text-xs font-medium tracking-normal transition-all flex items-center justify-center gap-1.5 border border-black/5"
+                >
+                  <span>View Page</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </button>
                 <button
                   type="button"
                   onClick={onOpenBooking}
-                  className="w-full py-3.5 rounded-pill bg-healis-blue hover:bg-black text-white text-xs font-medium tracking-normal transition-all flex items-center justify-center gap-2 shadow-sm duration-300 hover:scale-[0.98]"
+                  className="flex-1 py-3.5 rounded-pill bg-healis-blue hover:bg-black text-white text-xs font-medium tracking-normal transition-all flex items-center justify-center gap-1.5 shadow-sm duration-300 hover:scale-[0.98]"
                 >
                   <span>Book {service.title.split(' ')[0]}</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />

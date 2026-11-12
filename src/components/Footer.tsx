@@ -100,10 +100,10 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
               <ArrowUpRight className="w-4 h-4" />
             </button>
             <a
-              href="https://www.instagram.com/thehealthybodycompany/"
+              href="https://www.instagram.com/healthybody_co/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram"
+              aria-label="Instagram @healthybody_co"
               className="w-10 h-10 rounded-full bg-white/5 hover:bg-healis-blue border border-white/10 flex items-center justify-center text-white transition-colors"
             >
               <InstagramIcon className="w-4 h-4" />

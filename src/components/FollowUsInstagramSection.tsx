@@ -25,15 +25,31 @@ const INSTAGRAM_POSTS = [
     caption: 'High-performance sports rehab & return-to-play testing',
   },
   {
-    src: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2022/08/exercise-physiotherapy.jpg',
-    caption: 'Physio-led strength & clinical Pilates sessions',
+    src: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-12-scaled-e1761877163453.jpg',
+    caption: 'Strong and steady balance & mobility coaching',
   },
   {
-    src: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-13.jpg',
-    caption: '1-on-1 hands-on assessment across 4 Sydney clinics',
+    src: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Penrith-Physio-14-scaled.jpg',
+    caption: 'Hands-on manual therapy in Penrith & Jordan Springs',
   },
   {
-    src: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/jordan-springs-284A0112-scaled.jpg',
+    src: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/05/our-team-The-Healthy-Body-2304035597.jpg',
+    caption: 'Our multidisciplinary physio & admin team',
+  },
+  {
+    src: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/mt-annan-284A0133.jpg',
+    caption: 'Inside our Mount Annan clinic & rehab suite',
+  },
+  {
+    src: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/04/DSCF2028-scaled-e1776832196563.jpeg',
+    caption: 'Hands-on student & graduate physiotherapy workshops',
+  },
+  {
+    src: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Physio-in-Caringbah-scaled-e1761639907271.jpg',
+    caption: 'Movement & posture coaching in Caringbah',
+  },
+  {
+    src: 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/Sports-Physio-The-Healthy-Body.jpg',
     caption: 'Dedicated on-site rehab gyms for every recovery stage',
   },
 ];
@@ -53,7 +69,7 @@ export const FollowUsInstagramSection: React.FC = () => {
           <div className="space-y-3 max-w-xl">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-healis-blue">
               <InstagramIcon className="w-4 h-4" />
-              <span>@thehealthybodycompany</span>
+              <span>@healthybody_co</span>
             </div>
             <h2 className="font-exo text-3xl sm:text-5xl font-bold text-white tracking-tight">
               Follow us on <span className="text-healis-blue">Instagram</span>
@@ -64,29 +80,29 @@ export const FollowUsInstagramSection: React.FC = () => {
           </div>
 
           <a
-            href="https://www.instagram.com/thehealthybodycompany/"
+            href="https://www.instagram.com/healthybody_co/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 bg-healis-blue hover:bg-white text-white hover:text-healis-dark text-sm font-medium px-7 py-3.5 rounded-pill transition-all duration-300 self-start md:self-auto shrink-0"
           >
             <InstagramIcon className="w-4 h-4" />
-            <span>Follow @thehealthybodycompany</span>
+            <span>Follow @healthybody_co</span>
             <ArrowUpRight className="w-4 h-4" />
           </a>
         </motion.div>
 
-        {/* 4-Column Dark Gallery Grid */}
+        {/* 4x2 Dark Gallery Grid (8 Original THBC Photos) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {INSTAGRAM_POSTS.map((post, idx) => (
             <motion.a
               key={idx}
-              href="https://www.instagram.com/thehealthybodycompany/"
+              href="https://www.instagram.com/healthybody_co/"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
-              transition={{ duration: 0.55, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, delay: (idx % 4) * 0.06, ease: [0.22, 1, 0.36, 1] }}
               className="group relative aspect-square rounded-2xl overflow-hidden bg-white/5 border border-white/10"
             >
               <img

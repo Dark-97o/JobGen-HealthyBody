@@ -15,6 +15,7 @@ import { REAL_SERVICES } from '../data/thbcData';
 
 interface FindCareSectionProps {
   onSelectServices: () => void;
+  onSelectService: (serviceId: string) => void;
   onOpenBooking: () => void;
 }
 
@@ -26,6 +27,7 @@ const getServiceIcon = (index: number) => {
 
 export const FindCareSection: React.FC<FindCareSectionProps> = ({
   onSelectServices,
+  onSelectService,
   onOpenBooking,
 }) => {
   const [startIndex, setStartIndex] = useState(0);
@@ -125,7 +127,7 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
               {/* Column 1 (Service 1): Top Image Card + Bottom Text/Icon Card */}
               <div className="flex flex-col gap-4 lg:gap-5">
                 <div
-                  onClick={onSelectServices}
+                  onClick={() => onSelectService(serviceA.id)}
                   className="rounded-[1.75rem] overflow-hidden bg-slate-100 h-[345px] sm:h-[375px] relative group cursor-pointer"
                 >
                   <AnimatePresence mode="wait">
@@ -179,7 +181,7 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
               {/* Column 2 (Service 2): Top Text/Icon Card + Bottom Image Card */}
               <div className="flex flex-col gap-4 lg:gap-5">
                 <div
-                  onClick={onSelectServices}
+                  onClick={() => onSelectService(serviceB.id)}
                   className="rounded-[1.75rem] bg-[#F3F5F8] hover:bg-[#EAEFF6] border border-black/5 p-6 flex flex-col justify-between min-h-[280px] transition-colors duration-300 cursor-pointer group overflow-hidden"
                 >
                   <AnimatePresence mode="wait">
@@ -233,7 +235,7 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
               {/* Column 3 (Service 3): Top Image Card + Bottom Text/Icon Card */}
               <div className="flex flex-col gap-4 lg:gap-5">
                 <div
-                  onClick={onSelectServices}
+                  onClick={() => onSelectService(serviceC.id)}
                   className="rounded-[1.75rem] overflow-hidden bg-slate-100 h-[345px] sm:h-[375px] relative group cursor-pointer"
                 >
                   <AnimatePresence mode="wait">

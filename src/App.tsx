@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HomeView } from './views/HomeView';
 import { ServicesView } from './views/ServicesView';
+import { ServiceDetailView } from './views/ServiceDetailView';
 import { LocationsView } from './views/LocationsView';
 import { TeamView } from './views/TeamView';
 import { AboutView } from './views/AboutView';
@@ -13,10 +14,17 @@ import { BookingModal } from './components/BookingModal';
 
 export const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<string>('home');
+  const [selectedServiceId, setSelectedServiceId] = useState<string>('physiotherapy-treatment');
   const [isBookingOpen, setIsBookingOpen] = useState<boolean>(false);
 
   const handleSelectTab = (tab: string) => {
     setCurrentTab(tab);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSelectService = (serviceId: string) => {
+    setSelectedServiceId(serviceId);
+    setCurrentTab('service-detail');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -25,7 +33,9 @@ export const App: React.FC = () => {
       {/* Top Navbar with Official Brand Logo */}
       <Navbar
         currentTab={currentTab}
+        selectedServiceId={selectedServiceId}
         onSelectTab={handleSelectTab}
+        onSelectService={handleSelectService}
         onOpenBooking={() => setIsBookingOpen(true)}
       />
 
@@ -34,12 +44,23 @@ export const App: React.FC = () => {
         {currentTab === 'home' && (
           <HomeView
             onSelectTab={handleSelectTab}
+            onSelectService={handleSelectService}
             onOpenBooking={() => setIsBookingOpen(true)}
           />
         )}
 
         {currentTab === 'services' && (
           <ServicesView
+            onSelectService={handleSelectService}
+            onOpenBooking={() => setIsBookingOpen(true)}
+          />
+        )}
+
+        {currentTab === 'service-detail' && (
+          <ServiceDetailView
+            serviceId={selectedServiceId}
+            onSelectService={handleSelectService}
+            onBackToServices={() => handleSelectTab('services')}
             onOpenBooking={() => setIsBookingOpen(true)}
           />
         )}
