@@ -65,8 +65,8 @@ export const FindCareSection: React.FC<FindCareSectionProps> = ({
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-4 space-y-5"
           >
-            <h2 className="font-exo text-3xl sm:text-4xl lg:text-[42px] font-semibold text-healis-dark tracking-tight leading-tight">
-              Services we offer
+            <h2 className="font-exo text-3xl sm:text-4xl lg:text-[42px] font-semibold text-healis-dark tracking-tight leading-tight uppercase">
+              SERVICES WE <span className="text-healis-blue">OFFER</span>
             </h2>
 
             <p className="text-base text-healis-grey font-normal leading-relaxed">

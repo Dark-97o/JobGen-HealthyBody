@@ -70,25 +70,25 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             >
-              {/* 4 Cards in 2x2 grid (increased by +5% in size, flat / no shadow) with pointed corners & interactive central locator circle */}
+              {/* 4 Cards in 2x2 grid (reduced by 2%, flat / no shadow) with pointed corners & interactive central locator circle */}
               <div
-                className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.16] origin-top"
+                className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5 scale-100 lg:scale-[1.14] origin-top"
                 onMouseLeave={() => setShowLocations(false)}
               >
-                {/* Center White Circle with Looping Growing/Shrinking & Color Changing Locator Icon - No outer ring, no shadow, no text pill */}
+                {/* Center Creme Circle with Looping Growing/Shrinking & Color Changing Locator Icon - No outer ring, no grey border, no shadow */}
                 <div
                   onMouseEnter={() => setShowLocations(true)}
                   onClick={() => setShowLocations((prev) => !prev)}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer hidden sm:flex items-center justify-center group"
                   title="Hover or click to switch cards to all 4 Sydney clinic locations"
                 >
-                  {/* Main White Circle - Flat / No Shadow */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full border-4 border-slate-200/90 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 active:scale-95 shadow-none">
+                  {/* Main Creme Circle - Flat / No Border / No Shadow */}
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#FAF6EE] rounded-full border-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 active:scale-95 shadow-none">
                     {/* Locator Icon that grows, shrinks, and changes color in a continuous loop */}
                     <motion.div
                       animate={{
                         scale: [0.92, 1.25, 0.92],
-                        color: ['#556B2F', '#E53935', '#7DBE47', '#00B4D8', '#556B2F'],
+                        color: ['#607B34', '#E53935', '#7DBE47', '#00B4D8', '#607B34'],
                       }}
                       transition={{
                         duration: 3,
