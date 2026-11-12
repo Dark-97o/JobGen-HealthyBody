@@ -11,7 +11,7 @@ export const VideoShowcaseSection: React.FC = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover -scale-x-100"
       />
 
       {/* Subtle Dark Scrim for Glass Card Readability */}
@@ -76,3 +76,4 @@ export const VideoShowcaseSection: React.FC = () => {
     </section>
   );
 };
+
