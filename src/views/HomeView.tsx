@@ -48,16 +48,16 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* 5. Comprehensive Care for Every Stage of Life (3 Pillars & Review Avatars) */}
       <ComprehensiveCareSection />
 
-      {/* 6. Dedicated to Your Health & Well-being Mission Section */}
+      {/* 6. Parallax Testimonials Wall */}
+      <TestimonialsParallaxSection />
+
+      {/* 7. Dedicated to Your Health & Well-being Mission Section */}
       <MissionSection
         onSelectAbout={() => onSelectTab('about')}
       />
 
-      {/* 7. Second Subtle Marquee Divider */}
+      {/* 8. Second Subtle Marquee Divider */}
       <SpecialtiesMarquee />
-
-      {/* 8. Parallax Testimonials Wall */}
-      <TestimonialsParallaxSection />
 
       {/* 9. Get in Touch Full-Width CTA Box */}
       <CtaSection onOpenBooking={onOpenBooking} />

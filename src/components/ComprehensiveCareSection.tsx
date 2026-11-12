@@ -25,7 +25,7 @@ export const ComprehensiveCareSection: React.FC = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center py-20 sm:py-24 bg-[#F8F9FB]">
+    <section className="py-12 sm:py-16 bg-[#F8F9FB]">
       <div className="max-w-[1240px] w-full mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left: Heading & Review Proof */}
