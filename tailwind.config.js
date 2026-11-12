@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         healis: {
-          blue: '#607B34',
+          blue: '#7A9A42',
           dark: '#1C2214',
           grey: '#5E6355',
           light: '#FAF6EE',

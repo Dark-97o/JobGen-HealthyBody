@@ -88,7 +88,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                     <motion.div
                       animate={{
                         scale: [0.92, 1.25, 0.92],
-                        color: ['#607B34', '#E53935', '#7DBE47', '#00B4D8', '#607B34'],
+                        color: ['#7A9A42', '#E53935', '#7DBE47', '#00B4D8', '#7A9A42'],
                       }}
                       transition={{
                         duration: 3,
