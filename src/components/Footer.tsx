@@ -69,6 +69,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
     { label: 'Clinics', tab: 'locations' },
     { label: 'Specialists', tab: 'team' },
     { label: 'About Us', tab: 'about' },
+    { label: 'Careers', tab: 'careers' },
     { label: 'Blog', tab: 'blog' },
     { label: 'FAQs', tab: 'faqs' },
   ];

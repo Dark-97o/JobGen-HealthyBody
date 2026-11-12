@@ -6,6 +6,7 @@ import { LocationsView } from './views/LocationsView';
 import { TeamView } from './views/TeamView';
 import { AboutView } from './views/AboutView';
 import { BlogView } from './views/BlogView';
+import { CareersView } from './views/CareersView';
 import { FaqView } from './views/FaqView';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
@@ -63,6 +64,10 @@ export const App: React.FC = () => {
 
         {currentTab === 'blog' && (
           <BlogView />
+        )}
+
+        {currentTab === 'careers' && (
+          <CareersView />
         )}
 
         {currentTab === 'faqs' && (
