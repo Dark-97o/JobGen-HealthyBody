@@ -5,10 +5,10 @@ import { FindCareSection } from '../components/FindCareSection';
 import { VideoShowcaseSection } from '../components/VideoShowcaseSection';
 import { SelectSpecialistSection } from '../components/SelectSpecialistSection';
 import { ComprehensiveCareSection } from '../components/ComprehensiveCareSection';
-import { MissionSection } from '../components/MissionSection';
 import { TestimonialsParallaxSection } from '../components/TestimonialsParallaxSection';
-import { CtaSection } from '../components/CtaSection';
 import { HomeBlogSection } from '../components/HomeBlogSection';
+import { FollowUsInstagramSection } from '../components/FollowUsInstagramSection';
+import { CtaSection } from '../components/CtaSection';
 
 interface HomeViewProps {
   onSelectTab: (tab: string) => void;
@@ -30,7 +30,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* 2. Infinite Continuous Specialties Marquee Ticker */}
       <SpecialtiesMarquee />
 
-      {/* 3. Services Showcase Section (4 Core Physiotherapy Services) */}
+      {/* 3. Services Showcase Section */}
       <FindCareSection
         onSelectServices={() => onSelectTab('services')}
         onOpenBooking={onOpenBooking}
@@ -45,25 +45,20 @@ export const HomeView: React.FC<HomeViewProps> = ({
         onOpenBooking={onOpenBooking}
       />
 
-      {/* 5. Comprehensive Care for Every Stage of Life (3 Pillars & Review Avatars) */}
+      {/* 5. Comprehensive Care for Every Stage of Life */}
       <ComprehensiveCareSection />
 
-      {/* 6. Parallax Testimonials Wall */}
+      {/* 6. Testimonials Social Wall */}
       <TestimonialsParallaxSection />
 
-      {/* 7. Dedicated to Your Health & Well-being Mission Section */}
-      <MissionSection
-        onSelectAbout={() => onSelectTab('about')}
-      />
+      {/* 7. Blog Section */}
+      <HomeBlogSection onSelectBlog={() => onSelectTab('blog')} />
 
-      {/* 8. Second Subtle Marquee Divider */}
-      <SpecialtiesMarquee />
-
-      {/* 9. Get in Touch Full-Width CTA Box */}
+      {/* 8. Get in Touch Full-Width CTA Box */}
       <CtaSection onOpenBooking={onOpenBooking} />
 
-      {/* 10. Your Guide to Health Blog Cards */}
-      <HomeBlogSection onSelectBlog={() => onSelectTab('blog')} />
+      {/* 9. Dark Follow Us on Instagram Section */}
+      <FollowUsInstagramSection />
     </div>
   );
 };

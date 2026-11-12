@@ -9,32 +9,43 @@ interface HomeBlogSectionProps {
 
 export const HomeBlogSection: React.FC<HomeBlogSectionProps> = ({ onSelectBlog }) => {
   return (
-    <section className="min-h-screen flex items-center py-20 sm:py-24 bg-[#F8F9FB] border-t border-black/5">
+    <section className="py-16 sm:py-24 bg-[#F8F9FB] border-t border-black/5">
       <div className="max-w-[1240px] w-full mx-auto px-6 sm:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center max-w-2xl mx-auto mb-16 space-y-4"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12"
         >
-          <h2 className="text-3xl sm:text-5xl font-normal text-healis-dark tracking-tight leading-[1.25] sm:leading-[1.2]">
-            Your guide to <span className="text-healis-blue font-medium">health</span>
-          </h2>
-          <p className="text-base text-healis-grey font-normal">
-            Explore insightful articles and evidence-based rehabilitation advice from our clinicians.
-          </p>
+          <div className="space-y-2 max-w-xl">
+            <h2 className="font-exo text-4xl sm:text-5xl font-bold text-healis-dark tracking-tight">
+              Blog
+            </h2>
+            <p className="text-base text-healis-grey font-normal">
+              Evidence-based physiotherapy insights, injury prevention tips, and rehabilitation guides from our clinicians.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onClick={onSelectBlog}
+            className="inline-flex items-center gap-2 bg-white hover:bg-healis-blue text-healis-dark hover:text-white text-sm font-medium px-6 py-3 rounded-pill border border-black/10 hover:border-healis-blue transition-all duration-300 self-start sm:self-auto shrink-0"
+          >
+            <span>View all articles</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </button>
         </motion.div>
 
-        {/* 3 Healis Blog Cards */}
+        {/* 3 Blog Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {REAL_BLOG_POSTS.slice(0, 3).map((post, idx) => (
             <motion.div
               key={post.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
-              transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
               onClick={onSelectBlog}
               className="bg-white rounded-[2rem] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col justify-between group"
             >
@@ -56,7 +67,7 @@ export const HomeBlogSection: React.FC<HomeBlogSectionProps> = ({ onSelectBlog }
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-medium text-healis-dark group-hover:text-healis-blue transition-colors line-clamp-2">
+                  <h3 className="font-exo text-lg font-semibold text-healis-dark group-hover:text-healis-blue transition-colors line-clamp-2">
                     {post.title}
                   </h3>
 
@@ -68,7 +79,7 @@ export const HomeBlogSection: React.FC<HomeBlogSectionProps> = ({ onSelectBlog }
 
               <div className="p-7 pt-0">
                 <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-healis-dark group-hover:text-healis-blue transition-colors">
-                  <span>Learn more</span>
+                  <span>Read article</span>
                   <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </span>
               </div>
@@ -79,4 +90,3 @@ export const HomeBlogSection: React.FC<HomeBlogSectionProps> = ({ onSelectBlog }
     </section>
   );
 };
-
