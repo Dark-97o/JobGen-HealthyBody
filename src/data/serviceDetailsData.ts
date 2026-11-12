@@ -281,3 +281,4 @@ export const SERVICE_DETAILS: Record<string, ServiceRichContent> = {
       'Find a clear space near your camera so your physiotherapist can observe key movements, explain your diagnosis clearly, and send your tailored video exercise program straight to your phone.',
   },
 };
+
