@@ -29,9 +29,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* 2. Infinite Continuous Specialties Marquee Ticker */}
       <SpecialtiesMarquee />
 
-      {/* 3. Find Quality Care Nearby Section (Our 4 Sydney Clinics) */}
+      {/* 3. Services Showcase Section (4 Core Physiotherapy Services) */}
       <FindCareSection
-        onSelectLocations={() => onSelectTab('locations')}
+        onSelectServices={() => onSelectTab('services')}
         onOpenBooking={onOpenBooking}
       />
 
