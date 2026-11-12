@@ -13,7 +13,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
 }) => {
   const [showLocations, setShowLocations] = useState(false);
   return (
-    <section className="relative min-h-screen flex items-center pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-28 bg-[#FAF6EE] overflow-x-clip">
+    <section className="relative min-h-screen flex items-center pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-28 bg-white overflow-x-clip">
       {/* Brand Red Rounded Corner Vertical Half Rectangle on the Left Screen Edge */}
       <div
         className="absolute left-0 top-1/2 -translate-y-1/2 w-8 sm:w-10 lg:w-12 h-44 sm:h-56 lg:h-64 rounded-r-2xl sm:rounded-r-3xl bg-[#E53935] pointer-events-none z-0 shadow-sm"
@@ -56,7 +56,7 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
               <button
                 type="button"
                 onClick={onExploreServices}
-                className="inline-flex items-center gap-2 bg-[#F2ECE0] hover:bg-healis-dark hover:text-white text-healis-dark text-sm font-medium tracking-normal px-8 py-4 rounded-pill border border-black/10 shadow-sm transition-all duration-300 hover:scale-[0.975]"
+                className="inline-flex items-center gap-2 bg-white hover:bg-healis-dark hover:text-white text-healis-dark text-sm font-medium tracking-normal px-8 py-4 rounded-pill border border-black/10 shadow-sm transition-all duration-300 hover:scale-[0.975]"
               >
                 <span>Explore services</span>
               </button>
@@ -82,8 +82,8 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer hidden sm:flex items-center justify-center group"
                   title="Hover or click to switch cards to all 4 Sydney clinic locations"
                 >
-                  {/* Main Creme Circle - Flat / No Border / No Shadow */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#FAF6EE] rounded-full border-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 active:scale-95 shadow-none">
+                  {/* Main White Circle - Flat / No Border / No Shadow */}
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full border-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 active:scale-95 shadow-none">
                     {/* Locator Icon that grows, shrinks, and changes color in a continuous loop */}
                     <motion.div
                       animate={{

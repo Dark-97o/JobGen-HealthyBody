@@ -1,4 +1,5 @@
 import React from 'react';
+import { CheckSquare } from 'lucide-react';
 
 export const SpecialtiesMarquee: React.FC = () => {
   const specialties = [
@@ -26,10 +27,10 @@ export const SpecialtiesMarquee: React.FC = () => {
           <div className="flex shrink-0 items-center justify-around gap-8 min-w-full animate-marquee group-hover:[animation-play-state:paused]">
             {specialties.map((item, idx) => (
               <div key={`m1-${idx}`} className="flex items-center gap-8 shrink-0">
-                <span className="text-sm sm:text-base font-bold tracking-tight text-white hover:text-[#FAF6EE] transition-colors cursor-default whitespace-nowrap">
+                <span className="text-[22px] sm:text-[24px] font-bold tracking-tight text-white hover:text-white/85 transition-colors cursor-default whitespace-nowrap">
                   {item}
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-white/80 shrink-0" />
+                <CheckSquare className="w-5 h-5 sm:w-6 sm:h-6 text-white shrink-0" />
               </div>
             ))}
           </div>
@@ -38,10 +39,10 @@ export const SpecialtiesMarquee: React.FC = () => {
           <div className="flex shrink-0 items-center justify-around gap-8 min-w-full animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
             {specialties.map((item, idx) => (
               <div key={`m2-${idx}`} className="flex items-center gap-8 shrink-0">
-                <span className="text-sm sm:text-base font-bold tracking-tight text-white hover:text-[#FAF6EE] transition-colors cursor-default whitespace-nowrap">
+                <span className="text-[22px] sm:text-[24px] font-bold tracking-tight text-white hover:text-white/85 transition-colors cursor-default whitespace-nowrap">
                   {item}
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-white/80 shrink-0" />
+                <CheckSquare className="w-5 h-5 sm:w-6 sm:h-6 text-white shrink-0" />
               </div>
             ))}
           </div>
@@ -50,4 +51,3 @@ export const SpecialtiesMarquee: React.FC = () => {
     </div>
   );
 };
-

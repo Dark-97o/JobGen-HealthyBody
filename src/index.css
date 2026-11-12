@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#FAF6EE] text-healis-dark font-sans tracking-tight;
+    @apply bg-[#F8F9FB] text-healis-dark font-sans tracking-tight;
   }
   
   h1, h2, h3, h4, h5, h6 {

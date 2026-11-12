@@ -20,7 +20,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF6EE] text-healis-dark font-sans selection:bg-healis-blue selection:text-white relative">
+    <div className="min-h-screen bg-[#F8F9FB] text-healis-dark font-sans selection:bg-healis-blue selection:text-white relative">
       {/* Top Navbar with Official Brand Logo */}
       <Navbar
         currentTab={currentTab}

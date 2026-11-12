@@ -84,8 +84,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       <nav
         className={`transition-all duration-300 ${
           scrolled
-            ? 'bg-[#FAF6EE]/95 backdrop-blur-md py-3 shadow-[0_4px_20px_rgba(0,0,0,0.06)] border-b border-black/5'
-            : 'bg-[#FAF6EE]/90 backdrop-blur-sm py-4 border-b border-black/5'
+            ? 'bg-white/95 backdrop-blur-md py-3 shadow-[0_4px_20px_rgba(0,0,0,0.06)] border-b border-black/5'
+            : 'bg-white/90 backdrop-blur-sm py-4 border-b border-black/5'
         }`}
       >
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 flex items-center justify-between">
