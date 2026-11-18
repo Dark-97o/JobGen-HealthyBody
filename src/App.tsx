@@ -98,8 +98,11 @@ export const App: React.FC = () => {
         )}
       </main>
 
-      {/* Footer with Official White Logo & Full Directory */}
-      <Footer onSelectTab={handleSelectTab} />
+      {/* Footer with Scenic Landscape & Multi-Column Navigation */}
+      <Footer
+        onSelectTab={handleSelectTab}
+        onOpenBooking={() => setIsBookingOpen(true)}
+      />
 
       {/* Streamlined Booking Modal */}
       <BookingModal

@@ -57,11 +57,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* 7. Blog Section */}
       <HomeBlogSection onSelectBlog={() => onSelectTab('blog')} />
 
-      {/* 8. Get in Touch Full-Width CTA Box */}
-      <CtaSection onOpenBooking={onOpenBooking} />
-
-      {/* 9. Dark Follow Us on Instagram Section */}
+      {/* 8. Dark Follow Us on Instagram Section */}
       <FollowUsInstagramSection />
+
+      {/* 9. Get in Touch Full-Width CTA Box */}
+      <CtaSection onOpenBooking={onOpenBooking} />
     </div>
   );
 };

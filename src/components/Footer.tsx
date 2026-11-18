@@ -1,28 +1,12 @@
 import React from 'react';
-import { ArrowUp, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
-
-const InstagramIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-    className={className}
-  >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-  </svg>
-);
+import { ArrowUp } from 'lucide-react';
 
 interface FooterProps {
   onSelectTab: (tab: string) => void;
+  onOpenBooking?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
+export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -32,176 +16,242 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
     scrollToTop();
   };
 
-  const clinics = [
-    {
-      name: 'Penrith Flagship',
-      address: '95 Lethbridge St, Penrith NSW 2750',
-      phone: '(02) 4722 5555',
-      tel: 'tel:0247225555',
-      hours: 'Mon–Fri 7:30am–7:30pm · Sat 8am–1pm',
-    },
-    {
-      name: 'Caringbah Practice',
-      address: 'Suite 2, 383 Port Hacking Rd, Caringbah NSW 2229',
-      phone: '(02) 9531 2000',
-      tel: 'tel:0295312000',
-      hours: 'Mon–Fri 7:30am–6:30pm · Sat 8am–12pm',
-    },
-    {
-      name: 'Jordan Springs',
-      address: 'Unit 9, 65 Water Gum Dr, Jordan Springs NSW 2747',
-      phone: '(02) 4722 6994',
-      tel: 'tel:0247226994',
-      hours: 'Mon–Fri 7:30am–7:00pm · Sat 8am–1pm',
-    },
-    {
-      name: 'Mount Annan',
-      address: 'Shop 2, 1 Raintree Way, Mount Annan NSW 2567',
-      phone: '(02) 4622 8111',
-      tel: 'tel:0246228111',
-      hours: 'Mon–Fri 7:30am–7:00pm · Sat 8am–12pm',
-    },
-  ];
-
-  const navLinks = [
-    { label: 'Home', tab: 'home' },
-    { label: 'Services', tab: 'services' },
-    { label: 'Clinics', tab: 'locations' },
-    { label: 'Specialists', tab: 'team' },
-    { label: 'About Us', tab: 'about' },
-    { label: 'Careers', tab: 'careers' },
-    { label: 'Blog', tab: 'blog' },
-    { label: 'FAQs', tab: 'faqs' },
-  ];
-
   return (
-    <footer className="bg-[#080B11] text-slate-300 pt-16 pb-10 border-t border-white/10">
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-8 space-y-12">
-        {/* Top Highlight Bar */}
-        <div className="rounded-3xl bg-white/[0.03] border border-white/10 p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-2">
-            <img
-              src="https://www.thehealthybodycompany.com.au/wp-content/themes/thbc/static/images/thbc-logo-white.png"
-              alt="The Healthy Body Company"
-              className="h-9 w-auto object-contain"
-            />
-            <p className="text-xs sm:text-sm text-slate-400 max-w-xl">
-              Helping Greater Sydney love the body they live in since 1998 — hands-on physiotherapy, sports rehab, and on-site recovery gyms.
-            </p>
-          </div>
+    <footer className="relative bg-[#05333a] text-white overflow-hidden pt-44 sm:pt-56 md:pt-64 lg:pt-72 pb-12 sm:pb-16">
+      {/* Scenic Mountain Landscape & Family Silhouette Background */}
+      <div
+        className="absolute inset-0 bg-no-repeat bg-top bg-cover pointer-events-none"
+        style={{ backgroundImage: `url('/images/footer-landscape-hd.jpg')` }}
+      />
 
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <button
-              type="button"
-              onClick={() => navigate('locations')}
-              className="inline-flex items-center gap-2 bg-healis-blue hover:bg-white text-white hover:text-healis-dark text-xs sm:text-sm font-medium px-6 py-3 rounded-pill transition-all duration-300"
-            >
-              <span>Find a Clinic</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </button>
-            <a
-              href="https://www.instagram.com/healthybody_co/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram @healthybody_co"
-              className="w-10 h-10 rounded-full bg-white/5 hover:bg-healis-blue border border-white/10 flex items-center justify-center text-white transition-colors"
-            >
-              <InstagramIcon className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-10 border-b border-white/10">
-          {/* Accreditations & Contact */}
-          <div className="lg:col-span-4 space-y-5">
-            <div className="text-xs font-semibold uppercase tracking-wider text-white">
-              Accreditations &amp; Contact
+      {/* Content Container */}
+      <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 space-y-12 sm:space-y-16">
+        {/* Navigation Columns Grid matching the attached image */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-0">
+          {/* 1. LEARN (2 Sub-Columns) */}
+          <div className="md:col-span-12 lg:col-span-4 lg:pr-10 lg:border-r lg:border-white/15">
+            <h3 className="text-xs sm:text-[13px] font-semibold uppercase tracking-[0.22em] text-[#86B4BC] mb-5">
+              LEARN
+            </h3>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-3.5">
+              <div>
+                <ul className="space-y-3.5">
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('blog')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      What's New
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (onOpenBooking) onOpenBooking();
+                        else navigate('services');
+                      }}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Getting Started
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (onOpenBooking) onOpenBooking();
+                        else navigate('services');
+                      }}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Free Courses
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul className="space-y-3.5">
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('blog')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Browse Articles
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('services')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Indexing
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-2 text-[10px] uppercase tracking-wider font-semibold">
-              {['APA Accredited', 'AHPRA Registered', 'SIRA Approved', 'NDIS Registered'].map((badge) => (
-                <span
-                  key={badge}
-                  className="bg-white/5 px-3 py-1.5 rounded-full border border-white/10 text-slate-300"
+          </div>
+
+          {/* 2. GENERAL (3 Sub-Columns) */}
+          <div className="md:col-span-12 lg:col-span-5 lg:px-10 lg:border-r lg:border-white/15">
+            <h3 className="text-xs sm:text-[13px] font-semibold uppercase tracking-[0.22em] text-[#86B4BC] mb-5">
+              GENERAL
+            </h3>
+            <div className="grid grid-cols-3 gap-x-6 gap-y-3.5">
+              <div>
+                <ul className="space-y-3.5">
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('about')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      About
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('services')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Give Back
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('careers')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Careers
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul className="space-y-3.5">
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('blog')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Blog
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('locations')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Press
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('team')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Labs
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul className="space-y-3.5">
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('locations')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Store
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('about')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Privacy
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() => navigate('faqs')}
+                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                    >
+                      Terms
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. RESOURCES (1 Sub-Column) */}
+          <div className="md:col-span-12 lg:col-span-3 lg:pl-10">
+            <h3 className="text-xs sm:text-[13px] font-semibold uppercase tracking-[0.22em] text-[#86B4BC] mb-5">
+              RESOURCES
+            </h3>
+            <ul className="space-y-3.5">
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (onOpenBooking) onOpenBooking();
+                    else navigate('locations');
+                  }}
+                  className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
                 >
-                  {badge}
-                </span>
-              ))}
-            </div>
-            <a
-              href="mailto:admin@thehealthybodycompany.com.au"
-              className="inline-flex items-center gap-2 text-xs text-slate-300 hover:text-healis-blue transition-colors pt-1"
-            >
-              <Mail className="w-3.5 h-3.5 text-healis-blue" />
-              <span>admin@thehealthybodycompany.com.au</span>
-            </a>
-          </div>
-
-          {/* Navigation */}
-          <div className="lg:col-span-2 space-y-4">
-            <div className="text-xs font-semibold uppercase tracking-wider text-white">
-              Explore
-            </div>
-            <ul className="space-y-2.5 text-xs text-slate-400">
-              {navLinks.map((item) => (
-                <li key={item.tab}>
-                  <button
-                    type="button"
-                    onClick={() => navigate(item.tab)}
-                    className="hover:text-white transition-colors"
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              ))}
+                  Ask for Help
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => navigate('team')}
+                  className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                >
+                  Archivists
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => navigate('careers')}
+                  className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                >
+                  Developers
+                </button>
+              </li>
             </ul>
           </div>
-
-          {/* 4 Clinics Grid */}
-          <div className="lg:col-span-6 space-y-4">
-            <div className="text-xs font-semibold uppercase tracking-wider text-white">
-              Our 4 Sydney Clinics
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {clinics.map((clinic) => (
-                <div
-                  key={clinic.name}
-                  className="rounded-2xl bg-white/[0.02] border border-white/[0.06] p-4 space-y-1.5"
-                >
-                  <div className="font-exo text-sm font-semibold text-white">
-                    {clinic.name}
-                  </div>
-                  <div className="flex items-start gap-1.5 text-[11px] text-slate-400 leading-relaxed">
-                    <MapPin className="w-3.5 h-3.5 text-healis-blue shrink-0 mt-0.5" />
-                    <span>{clinic.address}</span>
-                  </div>
-                  <a
-                    href={clinic.tel}
-                    className="inline-flex items-center gap-1.5 text-xs text-slate-200 font-mono hover:text-healis-blue transition-colors pt-0.5"
-                  >
-                    <Phone className="w-3 h-3 text-healis-blue" />
-                    <span>{clinic.phone}</span>
-                  </a>
-                  <div className="text-[10px] text-slate-500 pt-0.5">
-                    {clinic.hours}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
-        {/* Bottom Copyright Strip */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <div>
-            © {new Date().getFullYear()} The Healthy Body Company Pty Ltd. All rights reserved. ABN 84 092 114 742.
-          </div>
+        {/* Bottom Copyright & Attribution Bar matching the image */}
+        <div className="pt-8 sm:pt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-[13px] text-teal-100/75">
+          <p className="leading-relaxed">
+            <span className="font-semibold text-white">© 2026 The Healthy Body Company</span>
+            <span className="mx-2 text-teal-200/40">·</span>
+            <span>A service dedicated to helping you love the body you live in</span>
+          </p>
+
           <button
             type="button"
             onClick={scrollToTop}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-teal-200/80 hover:text-white transition-colors"
           >
-            <span>Back to Top</span>
+            <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />
           </button>
         </div>
