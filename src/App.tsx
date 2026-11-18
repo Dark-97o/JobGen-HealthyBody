@@ -102,6 +102,7 @@ export const App: React.FC = () => {
       <Footer
         onSelectTab={handleSelectTab}
         onOpenBooking={() => setIsBookingOpen(true)}
+        isHome={currentTab === 'home'}
       />
 
       {/* Streamlined Booking Modal */}

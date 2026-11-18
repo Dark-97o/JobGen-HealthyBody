@@ -4,9 +4,10 @@ import { ArrowUp } from 'lucide-react';
 interface FooterProps {
   onSelectTab: (tab: string) => void;
   onOpenBooking?: () => void;
+  isHome?: boolean;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking }) => {
+export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking, isHome = true }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -17,12 +18,20 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking }) =>
   };
 
   return (
-    <footer className="relative bg-white text-white overflow-hidden pt-40 sm:pt-52 md:pt-60 lg:pt-68 pb-12 sm:pb-14">
+    <footer className={`relative ${isHome ? 'bg-white' : 'bg-[#F8F9FB]'} text-white overflow-hidden pt-40 sm:pt-52 md:pt-60 lg:pt-68 pb-12 sm:pb-14`}>
       {/* Scenic Mountain Landscape & Family Silhouette Background */}
       <div
         className="absolute inset-0 bg-no-repeat bg-top bg-cover pointer-events-none"
         style={{ backgroundImage: `url('/images/footer-landscape-hd.jpg')` }}
       />
+
+      {/* Top Blend Overlay for Sub-Pages (Seamlessly melts with the previous section's #F8F9FB background) */}
+      {!isHome && (
+        <div
+          className="absolute inset-x-0 top-0 h-32 sm:h-44 bg-gradient-to-b from-[#F8F9FB] via-[#F8F9FB]/80 to-transparent pointer-events-none z-[1]"
+          aria-hidden="true"
+        />
+      )}
 
       {/* Subtle Lower-Third Shading Gradient (leaving mountains, sky and silhouettes clear) */}
       <div className="absolute inset-x-0 bottom-0 top-[45%] bg-gradient-to-b from-transparent via-[#02181d]/35 to-[#011215]/75 pointer-events-none" />

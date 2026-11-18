@@ -123,8 +123,8 @@ export const CareersView: React.FC = () => {
           className="bg-white rounded-[2.5rem] p-8 sm:p-12 lg:p-14 border border-black/5 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center"
         >
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 bg-[#F3F5F8] px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-healis-blue">
-              <Briefcase className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-healis-blue">
+              <Briefcase className="w-4 h-4" />
               <span>Careers &amp; Graduate Program</span>
             </div>
 
@@ -193,7 +193,7 @@ export const CareersView: React.FC = () => {
                     <div className="w-12 h-12 rounded-2xl bg-healis-blue text-white flex items-center justify-center">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-healis-blue bg-healis-blue/10 px-3 py-1 rounded-full">
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-healis-blue">
                       {b.stat}
                     </span>
                   </div>
@@ -291,13 +291,13 @@ export const CareersView: React.FC = () => {
                 className="bg-white rounded-[2rem] p-8 border border-black/5 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-6"
               >
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="inline-block text-[11px] font-semibold uppercase tracking-wider bg-healis-blue/10 text-healis-blue px-3.5 py-1 rounded-full">
-                      {job.type}
-                    </span>
-                    <span className="inline-flex items-center gap-1 text-xs text-healis-grey font-medium">
-                      <MapPin className="w-3.5 h-3.5 text-healis-blue" />
+                  <div className="flex items-center justify-between gap-3 text-xs">
+                    <span className="inline-flex items-center gap-1.5 text-healis-grey font-medium">
+                      <MapPin className="w-3.5 h-3.5 text-healis-blue shrink-0" />
                       <span>{job.locations}</span>
+                    </span>
+                    <span className="font-semibold text-healis-blue">
+                      {job.type}
                     </span>
                   </div>
 
