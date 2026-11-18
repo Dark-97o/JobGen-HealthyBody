@@ -30,28 +30,28 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
       role: 'Outbound Patient Care',
       description:
         'Pre-screens patient inquiries, answers service questions, and syncs consultations directly with clinic diaries.',
-      avatar: '/images/partners/olivia.png',
+      avatar: '/images/partners/olivia.webp',
     },
     {
       name: 'JENNY',
       role: 'Enterprise Voice Receptionist',
       description:
         'Answers practice calls on ring one 24/7, handles FAQs, and routes urgent clinical matters to practitioners.',
-      avatar: '/images/partners/jenny.png',
+      avatar: '/images/partners/jenny.webp',
     },
     {
       name: 'JESS',
       role: 'Clinical Talent Screener',
       description:
         'Automates talent screening, qualification checks, and applicant shortlisting for allied health roles.',
-      avatar: '/images/partners/jess.png',
+      avatar: '/images/partners/jess.webp',
     },
     {
       name: 'EMMA',
       role: 'Patient Onboarding Specialist',
       description:
         'Guides new patient onboarding, recovery milestone check-ins, and practitioner professional workflows.',
-      avatar: '/images/partners/emma.png',
+      avatar: '/images/partners/emma.webp',
     },
   ];
 
@@ -136,7 +136,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                 <img
-                  src="/jobgen-logo.png"
+                  src="/jobgen-logo.webp"
                   alt="JobGen Logo"
                   className="h-10 sm:h-12 w-auto object-contain brightness-0 invert"
                 />
@@ -203,7 +203,7 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
         <div className="bg-white rounded-[2.5rem] p-8 sm:p-10 border border-black/5 shadow-xs flex flex-col md:flex-row items-center gap-7 lg:gap-9">
           <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden bg-slate-900 shrink-0 shadow-md">
             <img
-              src="/images/partners/kush.png"
+              src="/images/partners/kush.webp"
               alt="Kushagra Bhatia - Founder & CEO of JobGen"
               className="w-full h-full object-cover object-top"
             />

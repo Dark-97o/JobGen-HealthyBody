@@ -49,3 +49,13 @@
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+/* Graphic & Performance Load-Balancing */
+.graphic-load-balanced {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+img, video {
+  text-rendering: optimizeLegibility;
+}

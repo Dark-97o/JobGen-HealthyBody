@@ -310,7 +310,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking, isHo
             >
               <span className="text-teal-200/80">Powered by</span>
               <img
-                src="/jobgen-logo.png"
+                src="/jobgen-logo.webp"
                 alt="JobGen Logo"
                 className="w-4 h-4 object-contain brightness-0 invert group-hover:brightness-100 transition-all"
               />
