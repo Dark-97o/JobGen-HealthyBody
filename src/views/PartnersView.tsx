@@ -199,6 +199,50 @@ export const PartnersView: React.FC<PartnersViewProps> = ({
           </div>
         </motion.div>
 
+        {/* ── FOUNDER SPOTLIGHT: KUSHAGRA BHATIA ── */}
+        <div className="bg-white rounded-[2.5rem] p-8 sm:p-10 border border-black/5 shadow-xs flex flex-col md:flex-row items-center gap-7 lg:gap-9">
+          <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden bg-slate-900 shrink-0 shadow-md">
+            <img
+              src="/images/partners/kush.png"
+              alt="Kushagra Bhatia - Founder & CEO of JobGen"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+
+          <div className="space-y-1.5 flex-1 text-center md:text-left">
+            <span className="text-xs font-bold uppercase tracking-widest text-healis-blue block">
+              Founder &amp; CEO // JobGen.AI
+            </span>
+            <h3 className="font-exo text-2xl sm:text-3xl font-bold text-healis-dark">
+              Kushagra Bhatia
+            </h3>
+            <p className="text-xs sm:text-sm text-healis-grey leading-relaxed max-w-2xl">
+              Building autonomous AI systems that empower healthcare practices to triage patient inquiries and keep clinical care moving 24/7.
+            </p>
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 pt-1 text-xs text-slate-600 font-medium">
+              <a
+                href="mailto:hello@jobgen.ai"
+                className="text-healis-blue hover:text-healis-dark transition-colors inline-flex items-center gap-1 font-semibold"
+              >
+                <span>hello@jobgen.ai</span>
+                <ArrowUpRight className="w-3 h-3" />
+              </a>
+              <span>•</span>
+              <a
+                href="https://jobgen.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-healis-blue hover:text-healis-dark transition-colors inline-flex items-center gap-1 font-semibold"
+              >
+                <span>jobgen.ai</span>
+                <ArrowUpRight className="w-3 h-3" />
+              </a>
+              <span>•</span>
+              <span>Sydney (60 Martin Pl) &middot; San Francisco (580 California St)</span>
+            </div>
+          </div>
+        </div>
+
         {/* ── SECTION 2: AUTONOMOUS ECOSYSTEM ── */}
         <section className="space-y-6">
           <div className="space-y-1.5">
