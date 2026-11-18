@@ -26,23 +26,24 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking }) =>
 
       {/* Content Container */}
       <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 space-y-12 sm:space-y-16">
-        {/* Navigation Columns Grid matching the attached image */}
+        {/* Navigation Columns Grid with High-Visibility Lines & Interactive Buttons */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-0">
           {/* 1. LEARN (2 Sub-Columns) */}
-          <div className="md:col-span-12 lg:col-span-4 lg:pr-10 lg:border-r lg:border-white/15">
-            <h3 className="text-xs sm:text-[13px] font-semibold uppercase tracking-[0.22em] text-[#86B4BC] mb-5">
+          <div className="md:col-span-12 lg:col-span-4 lg:pr-10 lg:border-r-2 lg:border-[#4EA3B0]/60">
+            <h3 className="text-xs sm:text-[14px] font-bold uppercase tracking-[0.24em] text-[#7FE7F3] mb-6 drop-shadow-sm">
               LEARN
             </h3>
-            <div className="grid grid-cols-2 gap-x-6 gap-y-3.5">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-4">
               <div>
-                <ul className="space-y-3.5">
+                <ul className="space-y-3">
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('blog')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      What's New
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>What's New</span>
                     </button>
                   </li>
                   <li>
@@ -52,9 +53,10 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking }) =>
                         if (onOpenBooking) onOpenBooking();
                         else navigate('services');
                       }}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Getting Started
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Getting Started</span>
                     </button>
                   </li>
                   <li>
@@ -64,31 +66,34 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking }) =>
                         if (onOpenBooking) onOpenBooking();
                         else navigate('services');
                       }}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Free Courses
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Free Courses</span>
                     </button>
                   </li>
                 </ul>
               </div>
               <div>
-                <ul className="space-y-3.5">
+                <ul className="space-y-3">
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('blog')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Browse Articles
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Browse Articles</span>
                     </button>
                   </li>
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('services')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Indexing
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Indexing</span>
                     </button>
                   </li>
                 </ul>
@@ -97,100 +102,109 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking }) =>
           </div>
 
           {/* 2. GENERAL (3 Sub-Columns) */}
-          <div className="md:col-span-12 lg:col-span-5 lg:px-10 lg:border-r lg:border-white/15">
-            <h3 className="text-xs sm:text-[13px] font-semibold uppercase tracking-[0.22em] text-[#86B4BC] mb-5">
+          <div className="md:col-span-12 lg:col-span-5 lg:px-10 lg:border-r-2 lg:border-[#4EA3B0]/60">
+            <h3 className="text-xs sm:text-[14px] font-bold uppercase tracking-[0.24em] text-[#7FE7F3] mb-6 drop-shadow-sm">
               GENERAL
             </h3>
-            <div className="grid grid-cols-3 gap-x-6 gap-y-3.5">
+            <div className="grid grid-cols-3 gap-x-6 gap-y-4">
               <div>
-                <ul className="space-y-3.5">
+                <ul className="space-y-3">
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('about')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      About
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>About</span>
                     </button>
                   </li>
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('services')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Give Back
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Give Back</span>
                     </button>
                   </li>
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('careers')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Careers
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Careers</span>
                     </button>
                   </li>
                 </ul>
               </div>
               <div>
-                <ul className="space-y-3.5">
+                <ul className="space-y-3">
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('blog')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Blog
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Blog</span>
                     </button>
                   </li>
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('locations')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Press
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Press</span>
                     </button>
                   </li>
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('team')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Labs
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Labs</span>
                     </button>
                   </li>
                 </ul>
               </div>
               <div>
-                <ul className="space-y-3.5">
+                <ul className="space-y-3">
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('locations')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Store
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Store</span>
                     </button>
                   </li>
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('about')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Privacy
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Privacy</span>
                     </button>
                   </li>
                   <li>
                     <button
                       type="button"
                       onClick={() => navigate('faqs')}
-                      className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                      className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                     >
-                      Terms
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>Terms</span>
                     </button>
                   </li>
                 </ul>
@@ -200,10 +214,10 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking }) =>
 
           {/* 3. RESOURCES (1 Sub-Column) */}
           <div className="md:col-span-12 lg:col-span-3 lg:pl-10">
-            <h3 className="text-xs sm:text-[13px] font-semibold uppercase tracking-[0.22em] text-[#86B4BC] mb-5">
+            <h3 className="text-xs sm:text-[14px] font-bold uppercase tracking-[0.24em] text-[#7FE7F3] mb-6 drop-shadow-sm">
               RESOURCES
             </h3>
-            <ul className="space-y-3.5">
+            <ul className="space-y-3">
               <li>
                 <button
                   type="button"
@@ -211,45 +225,48 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking }) =>
                     if (onOpenBooking) onOpenBooking();
                     else navigate('locations');
                   }}
-                  className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                  className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                 >
-                  Ask for Help
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span>Ask for Help</span>
                 </button>
               </li>
               <li>
                 <button
                   type="button"
                   onClick={() => navigate('team')}
-                  className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                  className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                 >
-                  Archivists
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span>Archivists</span>
                 </button>
               </li>
               <li>
                 <button
                   type="button"
                   onClick={() => navigate('careers')}
-                  className="text-white hover:text-[#A6E0E9] font-medium text-[14px] sm:text-[15px] transition-colors text-left"
+                  className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-semibold text-[15px] sm:text-[16px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                 >
-                  Developers
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span>Developers</span>
                 </button>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Copyright & Attribution Bar matching the image */}
-        <div className="pt-8 sm:pt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-[13px] text-teal-100/75">
+        {/* Bottom Copyright & Attribution Bar */}
+        <div className="pt-8 sm:pt-10 border-t border-white/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-[13px] text-teal-100/90">
           <p className="leading-relaxed">
             <span className="font-semibold text-white">© 2026 The Healthy Body Company</span>
-            <span className="mx-2 text-teal-200/40">·</span>
+            <span className="mx-2 text-teal-200/50">·</span>
             <span>A service dedicated to helping you love the body you live in</span>
           </p>
 
           <button
             type="button"
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 text-teal-200/80 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium text-xs transition-all shadow-sm"
           >
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />

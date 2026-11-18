@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, Calendar, CheckCircle2, MapPin, Phone, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Calendar, CheckCircle2, MapPin, Phone } from 'lucide-react';
 
 interface CtaSectionProps {
   onOpenBooking: () => void;
@@ -17,17 +17,12 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenBooking }) => {
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-10">
             {/* Left Content */}
             <div className="space-y-4 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold uppercase tracking-wider text-healis-blue">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Start Your Recovery</span>
-              </div>
-
               <h3 className="font-exo text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.12]">
                 Ready to move <span className="text-healis-blue">pain-free?</span>
               </h3>
 
               <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
-                Reserve your comprehensive 45-minute assessment with our Sydney physiotherapists. Same-week appointments available across Penrith, Caringbah, Jordan Springs, and Mount Annan.
+                45-minute 1-on-1 physio assessments with same-week appointments across 4 Sydney clinics.
               </p>
 
               {/* Quick Trust Highlights */}
