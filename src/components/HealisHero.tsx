@@ -114,9 +114,12 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                         transition={{ duration: 0.25 }}
                         className="w-full h-full relative"
                       >
-                        <img
-                          src="https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/04/sports-physio-The-Healthy-Body-2304035057-scaled-e1719978691299.jpg"
-                          alt="Sports physiotherapy rehabilitation session at The Healthy Body Company"
+                        <video
+                          src="/hero1.mp4"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
@@ -362,9 +365,12 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
                         transition={{ duration: 0.25 }}
                         className="w-full h-full relative"
                       >
-                        <img
-                          src="/images/red-tshirt.jpg"
-                          alt="The Healthy Body Company official clinician team uniform"
+                        <video
+                          src="/hero2.mp4"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
