@@ -19,25 +19,30 @@ export const TeamView: React.FC<TeamViewProps> = ({ onOpenBooking }) => {
   return (
     <div className="pt-32 pb-24 sm:pt-40 sm:pb-32 bg-[#F8F9FB]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        {/* Header */}
+        {/* Header: Headline on the Left, Info on the Right */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-3xl mb-14"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12"
         >
-          <div className="text-xs uppercase tracking-[0.2em] font-semibold text-slate-500 mb-3">
-            Allied Health Team
+          {/* Left: Bold Headline */}
+          <div className="space-y-3 max-w-2xl">
+            <div className="text-xs uppercase tracking-[0.2em] font-semibold text-healis-blue">
+              Allied Health Team
+            </div>
+            <h1 className="font-exo text-4xl sm:text-5xl lg:text-6xl font-bold text-healis-dark tracking-tight leading-[1.08]">
+              Meet our <br />
+              <span className="text-healis-blue">dedicated practitioners</span>
+            </h1>
           </div>
-          <h1 className="text-4xl sm:text-6xl font-normal text-healis-dark tracking-tight leading-[1.2] sm:leading-[1.18]">
-            Meet our <br />
-            <span className="text-healis-blue font-medium">
-              dedicated practitioners
-            </span>
-          </h1>
-          <p className="mt-6 text-base sm:text-lg text-slate-600 font-light leading-relaxed">
-            The Healthy Body Company brings together a team of qualified physiotherapists, remedial massage therapists, and clinical directors committed to empowering your health journey with exceptional care and expertise.
-          </p>
+
+          {/* Right: Info Line */}
+          <div className="max-w-md lg:max-w-lg lg:text-right">
+            <p className="text-base sm:text-lg text-healis-grey font-normal leading-relaxed">
+              The Healthy Body Company brings together a team of qualified physiotherapists, remedial massage therapists, and clinical directors committed to empowering your health journey with exceptional care and expertise.
+            </p>
+          </div>
         </motion.div>
 
         {/* Filter Pills */}

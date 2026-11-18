@@ -38,25 +38,30 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
   return (
     <div className="pt-32 pb-24 sm:pt-40 sm:pb-32 bg-[#F8F9FB]">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-24">
-        {/* Header */}
+        {/* Header: Headline on the Left, Info on the Right */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-3xl"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2"
         >
-          <div className="text-xs uppercase tracking-[0.2em] font-semibold text-slate-500 mb-3">
-            Since 1998
+          {/* Left: Bold Headline */}
+          <div className="space-y-3 max-w-2xl">
+            <div className="text-xs uppercase tracking-[0.2em] font-semibold text-healis-blue">
+              Since 1998
+            </div>
+            <h1 className="font-exo text-4xl sm:text-5xl lg:text-6xl font-bold text-healis-dark tracking-tight leading-[1.08]">
+              Helping you love <br />
+              <span className="text-healis-blue">the body you live in</span>
+            </h1>
           </div>
-          <h1 className="text-4xl sm:text-6xl font-normal text-healis-dark tracking-tight leading-[1.2] sm:leading-[1.18]">
-            Helping you love <br />
-            <span className="text-healis-blue font-medium">
-              the body you live in
-            </span>
-          </h1>
-          <p className="mt-6 text-base sm:text-lg text-slate-600 font-light leading-relaxed">
-            From our founding clinic in Penrith in 1998, The Healthy Body Company has grown organically into a multi-practice allied health network serving thousands of families across Sydney.
-          </p>
+
+          {/* Right: Info Line */}
+          <div className="max-w-md lg:max-w-lg lg:text-right">
+            <p className="text-base sm:text-lg text-healis-grey font-normal leading-relaxed">
+              From our founding clinic in Penrith in 1998, The Healthy Body Company has grown organically into a multi-practice allied health network serving thousands of families across Sydney.
+            </p>
+          </div>
         </motion.div>
 
         {/* Narrative & Photo Split */}
@@ -87,12 +92,12 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
 
         {/* Core Values */}
         <div className="space-y-12">
-          <div className="text-center max-w-2xl mx-auto">
-            <div className="text-xs uppercase tracking-[0.2em] font-semibold text-slate-500 mb-2">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <div className="text-xs uppercase tracking-[0.2em] font-semibold text-healis-blue">
               Our Principles
             </div>
-            <h2 className="text-3xl sm:text-4xl font-normal text-healis-dark tracking-tight leading-[1.25]">
-              Values that guide our <span className="text-healis-blue font-medium">care</span>
+            <h2 className="font-exo text-3xl sm:text-4xl font-bold text-healis-dark tracking-tight leading-[1.25]">
+              Values that guide our <span className="text-healis-blue">care</span>
             </h2>
           </div>
 
@@ -100,12 +105,21 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
             {values.map((v, i) => {
               const Icon = v.icon;
               return (
-                <div key={i} className="bg-white rounded-[2rem] p-6 border border-black/5 shadow-sm space-y-3">
-                  <div className="w-10 h-10 rounded-2xl bg-healis-blue/10 text-healis-blue flex items-center justify-center">
-                    <Icon className="w-5 h-5" />
+                <div key={i} className="bg-white rounded-[2rem] p-6 border border-black/5 shadow-sm space-y-3 flex flex-col justify-between">
+                  <div className="space-y-3">
+                    {/* Headline placed right next to the icon */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-2xl bg-healis-blue/10 text-healis-blue flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <h3 className="font-exo text-lg font-bold text-healis-dark tracking-tight leading-snug">
+                        {v.title}
+                      </h3>
+                    </div>
+                    <p className="text-xs sm:text-[13px] text-healis-grey font-normal leading-relaxed">
+                      {v.desc}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-medium text-healis-dark">{v.title}</h3>
-                  <p className="text-xs text-healis-grey font-normal leading-relaxed">{v.desc}</p>
                 </div>
               );
             })}
