@@ -8,6 +8,7 @@ import { TeamView } from './views/TeamView';
 import { AboutView } from './views/AboutView';
 import { BlogView } from './views/BlogView';
 import { CareersView } from './views/CareersView';
+import { PartnersView } from './views/PartnersView';
 import { FaqView } from './views/FaqView';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
@@ -89,6 +90,13 @@ export const App: React.FC = () => {
 
         {currentTab === 'careers' && (
           <CareersView />
+        )}
+
+        {currentTab === 'partners' && (
+          <PartnersView
+            onOpenBooking={() => setIsBookingOpen(true)}
+            onNavigateHome={() => handleSelectTab('home')}
+          />
         )}
 
         {currentTab === 'faqs' && (

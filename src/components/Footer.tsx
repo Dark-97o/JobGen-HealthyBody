@@ -152,6 +152,16 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking, isHo
                         <span>Careers</span>
                       </button>
                     </li>
+                    <li>
+                      <button
+                        type="button"
+                        onClick={() => navigate('partners')}
+                        className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-medium text-[14px] sm:text-[15px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <span>Partners</span>
+                      </button>
+                    </li>
                   </ul>
                 </div>
                 <div>
@@ -257,6 +267,16 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking, isHo
                 <li>
                   <button
                     type="button"
+                    onClick={() => navigate('partners')}
+                    className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-medium text-[14px] sm:text-[15px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#5CE1E6] opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span>Technology Partners</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
                     onClick={() => navigate('careers')}
                     className="group flex items-center gap-2 text-white hover:text-[#5CE1E6] font-medium text-[14px] sm:text-[15px] transition-all duration-200 hover:translate-x-1 text-left py-0.5"
                   >
@@ -271,16 +291,37 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking, isHo
 
         {/* Bottom Copyright & Attribution Bar */}
         <div className="pt-2 border-t border-white/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-[13px] text-teal-100/80">
-          <p className="leading-relaxed">
-            <span className="font-semibold text-white">© 2026 The Healthy Body Company</span>
-            <span className="mx-2 text-teal-200/50">·</span>
-            <span>A service dedicated to helping you love the body you live in</span>
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 leading-relaxed">
+            <p>
+              <span className="font-semibold text-white">© 2026 The Healthy Body Company</span>
+              <span className="mx-2 text-teal-200/50">·</span>
+              <span>A service dedicated to helping you love the body you live in</span>
+            </p>
+
+            {/* Powered by Jobgen */}
+            <a
+              href="#partners"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('partners');
+              }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white text-xs font-semibold transition-all hover:scale-105 group w-fit"
+              title="Technology Partner — Powered by JOBGEN.AI"
+            >
+              <span className="text-teal-200/80">Powered by</span>
+              <img
+                src="/jobgen-logo.png"
+                alt="JobGen Logo"
+                className="w-4 h-4 object-contain brightness-0 invert group-hover:brightness-100 transition-all"
+              />
+              <span className="text-[#5CE1E6] font-bold tracking-wide">JOBGEN.AI</span>
+            </a>
+          </div>
 
           <button
             type="button"
             onClick={scrollToTop}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium text-xs transition-all shadow-sm"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium text-xs transition-all shadow-sm shrink-0"
           >
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />

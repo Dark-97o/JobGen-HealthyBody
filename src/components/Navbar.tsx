@@ -39,6 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'team', label: 'Doctors' },
     { id: 'about', label: 'About Us' },
     { id: 'careers', label: 'Careers' },
+    { id: 'partners', label: 'Partners' },
     { id: 'blog', label: 'Blog' },
     { id: 'faqs', label: 'FAQs' },
   ];
