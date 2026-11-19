@@ -396,7 +396,7 @@ export const InteractiveCardsSection: React.FC<InteractiveCardsSectionProps> = (
             </motion.div>
           </div>
 
-          {/* Right Column: Different Headline, Clean Info, & Action Buttons */}
+          {/* Right Column: Different Headline & Action Buttons */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -404,21 +404,11 @@ export const InteractiveCardsSection: React.FC<InteractiveCardsSectionProps> = (
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 space-y-6 text-left"
           >
-            {/* Clean blue subtitle, no pill */}
-            <div className="text-sm font-bold uppercase tracking-wider text-healis-blue">
-              Greater Sydney Care Network
-            </div>
-
-            {/* Different Headline */}
+            {/* Headline */}
             <h2 className="font-exo text-3xl sm:text-4xl lg:text-[46px] font-bold text-healis-dark tracking-tight leading-[1.08] uppercase">
               Four Clinics Across Sydney, <br />
               <span className="text-healis-blue">One Standard of Care</span>
             </h2>
-
-            {/* Concise 1-2 line description */}
-            <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-              Experience dedicated, one-on-one physiotherapy and sports rehabilitation tailored to get you moving pain-free and back to what you love.
-            </p>
 
             {/* Key Clinical Advantages - Clean list, no pills */}
             <div className="space-y-3 pt-1">
