@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
 
 interface FooterProps {
   onSelectTab: (tab: string) => void;
@@ -297,35 +296,33 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking, isHo
               <span className="mx-2 text-teal-200/50">·</span>
               <span>A service dedicated to helping you love the body you live in</span>
             </p>
-
-            {/* Powered by Jobgen */}
-            <a
-              href="#partners"
-              onClick={(e) => {
-                e.preventDefault();
-                navigate('partners');
-              }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white text-xs font-semibold transition-all hover:scale-105 group w-fit"
-              title="Technology Partner — Powered by JOBGEN.AI"
-            >
-              <span className="text-teal-200/80">Powered by</span>
-              <img
-                src="/jobgen-logo.webp"
-                alt="JobGen Logo"
-                className="w-4 h-4 object-contain brightness-0 invert group-hover:brightness-100 transition-all"
-              />
-              <span className="text-[#5CE1E6] font-bold tracking-wide">JOBGEN.AI</span>
-            </a>
           </div>
 
-          <button
-            type="button"
-            onClick={scrollToTop}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium text-xs transition-all shadow-sm shrink-0"
+          {/* Powered by Jobgen (Replaces Back to top on the right) */}
+          <a
+            href="#partners"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate('partners');
+            }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-semibold transition-all hover:scale-105 group shrink-0"
+            title="Technology Partner — Powered by JOBGEN.AI"
           >
-            <span>Back to top</span>
-            <ArrowUp className="w-3.5 h-3.5" />
-          </button>
+            <span className="text-teal-100/90 font-medium">Powered by</span>
+            <img
+              src="/jobgen-logo.webp"
+              alt="JobGen Logo"
+              className="w-4 h-4 object-contain brightness-0 invert group-hover:brightness-100 transition-all"
+            />
+            <span className="text-[#5CE1E6] font-bold tracking-wide">JOBGEN.AI</span>
+          </a>
+        </div>
+
+        {/* Big Glowing Company Name Below Copyright Bar */}
+        <div className="pt-10 sm:pt-14 pb-2 flex justify-center items-center w-full overflow-hidden select-none">
+          <h2 className="footer-brand-title font-exo font-black uppercase tracking-tight text-5xl sm:text-7xl md:text-8xl lg:text-[110px] xl:text-[132px] leading-[0.92] text-center cursor-default">
+            The Healthy Body
+          </h2>
         </div>
       </div>
     </footer>
