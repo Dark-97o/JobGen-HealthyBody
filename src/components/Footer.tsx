@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
 interface FooterProps {
   onSelectTab: (tab: string) => void;
@@ -7,6 +7,19 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking, isHome = true }) => {
+  const textRef = useRef<HTMLDivElement>(null);
+  const [mousePos, setMousePos] = useState({ x: -999, y: -999 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!textRef.current) return;
+    const rect = textRef.current.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -318,11 +331,38 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking, isHo
           </a>
         </div>
 
-        {/* Big Glowing Company Name Below Copyright Bar */}
+        {/* Big Glowing Brand Statement: Single Line with Pointer Spotlight Glow in ~10 Radius */}
         <div className="pt-10 sm:pt-14 pb-2 flex justify-center items-center w-full overflow-hidden select-none">
-          <h2 className="footer-brand-title font-exo font-black uppercase tracking-tight text-5xl sm:text-7xl md:text-8xl lg:text-[110px] xl:text-[132px] leading-[0.92] text-center cursor-default">
-            The Healthy Body
-          </h2>
+          <div
+            ref={textRef}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="relative inline-block text-center cursor-default max-w-full"
+          >
+            {/* Base Layer: Crisp Simple White Text (Single Line, Never Wraps) */}
+            <h2 className="font-exo font-black uppercase tracking-tight text-[8vw] xl:text-[116px] leading-none text-white whitespace-nowrap drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] select-none">
+              The Healthy Body
+            </h2>
+
+            {/* Glowing Layer: Only illuminates within a 10 radius (~110px circle) directly around the pointer */}
+            <h2
+              aria-hidden="true"
+              style={{
+                opacity: isHovered ? 1 : 0,
+                maskImage: isHovered
+                  ? `radial-gradient(circle 110px at ${mousePos.x}px ${mousePos.y}px, black 0%, black 25%, transparent 100%)`
+                  : 'none',
+                WebkitMaskImage: isHovered
+                  ? `radial-gradient(circle 110px at ${mousePos.x}px ${mousePos.y}px, black 0%, black 25%, transparent 100%)`
+                  : 'none',
+                transition: 'opacity 0.2s ease',
+              }}
+              className="absolute inset-0 font-exo font-black uppercase tracking-tight text-[8vw] xl:text-[116px] leading-none whitespace-nowrap pointer-events-none select-none text-transparent bg-clip-text bg-gradient-to-r from-[#5CE1E6] via-[#38BDF8] via-[#2DD4BF] to-[#7DBE47] drop-shadow-[0_0_20px_rgba(92,225,230,0.95)] drop-shadow-[0_0_40px_rgba(56,189,248,0.7)]"
+            >
+              The Healthy Body
+            </h2>
+          </div>
         </div>
       </div>
     </footer>
