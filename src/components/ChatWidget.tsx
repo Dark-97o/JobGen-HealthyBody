@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send, Bot, ArrowUpRight } from 'lucide-react';
+import { X, Send, ArrowUpRight } from 'lucide-react';
 
 interface ChatWidgetProps {
   onOpenBooking: () => void;
@@ -18,6 +18,8 @@ interface Message {
   };
 }
 
+const DOCTOR_AVATAR = 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/11/emily-brown-1.png';
+
 export const ChatWidget: React.FC<ChatWidgetProps> = ({ onOpenBooking, onNavigateTab }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -25,7 +27,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ onOpenBooking, onNavigat
     {
       id: 'welcome-1',
       sender: 'bot',
-      text: 'Hello! 👋 Welcome to The Healthy Body Company. How can we help you today?',
+      text: "Hello! 👋 I'm Emily from The Healthy Body Company. How can I help you today?",
       timestamp: 'Just now',
     },
   ]);
@@ -145,44 +147,40 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ onOpenBooking, onNavigat
 
   return (
     <>
-      {/* Floating Circular Trigger Button at Bottom Right */}
+      {/* Floating Circular Trigger Button at Bottom Right with Female Doctor Avatar */}
       <div className="fixed bottom-6 right-6 z-40 sm:bottom-7 sm:right-7">
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
-          className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-healis-blue hover:bg-black text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 group focus:outline-none focus:ring-4 focus:ring-healis-blue/30"
-          aria-label={isOpen ? 'Close chat' : 'Open chat'}
-          title={isOpen ? 'Close chat' : 'Chat with us'}
+          className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 group focus:outline-none ring-3 ring-white border border-black/10 overflow-hidden bg-slate-100"
+          aria-label={isOpen ? 'Close chat' : 'Chat with Emily from The Healthy Body Company'}
+          title={isOpen ? 'Close chat' : 'Chat with Emily from The Healthy Body Company'}
         >
-          {/* Animated Icon Flip */}
-          <AnimatePresence mode="wait" initial={false}>
-            {isOpen ? (
+          {/* Doctor Portrait Image */}
+          <img
+            src={DOCTOR_AVATAR}
+            alt="Dr. Emily Brown - Physiotherapist"
+            className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110"
+          />
+
+          {/* Close icon overlay when open */}
+          <AnimatePresence>
+            {isOpen && (
               <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
+                className="absolute inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center text-white"
               >
-                <X className="w-6 h-6 sm:w-7 sm:h-7 stroke-[2.2]" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="chat"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="relative"
-              >
-                <MessageSquare className="w-6 h-6 sm:w-7 sm:h-7 stroke-[2.2]" />
+                <X className="w-6 h-6 stroke-[2.5]" />
               </motion.div>
             )}
           </AnimatePresence>
 
           {/* Green Live Online Dot */}
           <span
-            className="absolute top-0 right-0 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white shadow-sm flex items-center justify-center"
+            className="absolute top-0.5 right-0.5 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white shadow-sm flex items-center justify-center z-10"
             title="Online"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
@@ -204,16 +202,18 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ onOpenBooking, onNavigat
             {/* Header */}
             <div className="bg-[#111111] text-white p-4 sm:p-4.5 flex items-center justify-between border-b border-white/10">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-healis-blue/20 text-[#38bdf8] border border-[#38bdf8]/30 flex items-center justify-center">
-                  <Bot className="w-5 h-5 stroke-[2.2]" />
-                </div>
+                <img
+                  src={DOCTOR_AVATAR}
+                  alt="Emily Brown"
+                  className="w-11 h-11 rounded-full object-cover object-top border-2 border-[#38bdf8] bg-slate-800 shrink-0"
+                />
                 <div>
                   <h3 className="font-semibold text-sm text-white leading-tight">
-                    Healthy Body Assistant
+                    Emily • Clinical Support
                   </h3>
                   <div className="flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium mt-0.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Online • Instant replies</span>
+                    <span>Online • The Healthy Body Company</span>
                   </div>
                 </div>
               </div>
