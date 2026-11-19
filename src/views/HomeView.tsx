@@ -1,6 +1,7 @@
 import React from 'react';
 import { HealisHero } from '../components/HealisHero';
 import { SpecialtiesMarquee } from '../components/SpecialtiesMarquee';
+import { InteractiveCardsSection } from '../components/InteractiveCardsSection';
 import { FindCareSection } from '../components/FindCareSection';
 import { VideoShowcaseSection } from '../components/VideoShowcaseSection';
 import { SelectSpecialistSection } from '../components/SelectSpecialistSection';
@@ -31,6 +32,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 2. Infinite Continuous Specialties Marquee Ticker */}
       <SpecialtiesMarquee />
+
+      {/* 2.5. 4 Interactive Cards (Left) with Dedicated Headline & Highlights (Right) */}
+      <InteractiveCardsSection
+        onOpenBooking={onOpenBooking}
+        onExploreServices={() => onSelectTab('services')}
+        onSelectLocations={() => onSelectTab('locations')}
+      />
 
       {/* 3. Services Showcase Section */}
       <FindCareSection
