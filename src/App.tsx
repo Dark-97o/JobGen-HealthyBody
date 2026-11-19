@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { HomeView } from './views/HomeView';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
+import { ChatWidget } from './components/ChatWidget';
 
 // Load-Balanced Dynamic Code Splitting for Sub-Pages
 const ServicesView = lazy(() =>
@@ -190,6 +191,12 @@ export const App: React.FC = () => {
       <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
+      />
+
+      {/* Floating Bottom-Right Circular Chat Box */}
+      <ChatWidget
+        onOpenBooking={() => setIsBookingOpen(true)}
+        onNavigateTab={handleSelectTab}
       />
     </div>
   );
