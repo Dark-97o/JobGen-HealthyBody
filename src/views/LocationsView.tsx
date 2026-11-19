@@ -70,8 +70,8 @@ export const LocationsView: React.FC<LocationsViewProps> = ({ onOpenBooking }) =
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="bg-white rounded-[2rem] p-6 sm:p-10 border border-black/5 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch"
         >
-          {/* Left Column: Compact Clinic Details */}
-          <div className="lg:col-span-7 flex flex-col justify-between space-y-5">
+          {/* Left Column: Clinic Details with Line Separators (No Cards) */}
+          <div className="lg:col-span-7 flex flex-col justify-between py-1">
             <div>
               <div className="text-xs uppercase tracking-widest text-healis-blue font-semibold">
                 {selectedClinic.suburb} Practice
@@ -84,9 +84,13 @@ export const LocationsView: React.FC<LocationsViewProps> = ({ onOpenBooking }) =
               </p>
             </div>
 
-            {/* Address & Contact Details */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-              <div className="p-4 rounded-2xl bg-[#F8F9FB] border border-black/5 space-y-1">
+            {/* Line Separator */}
+            <div className="border-t border-slate-200/80 my-4 sm:my-5" />
+
+            {/* Address & Direct Phone */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* Address */}
+              <div className="space-y-1">
                 <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-healis-blue shrink-0" />
                   <span>Address</span>
@@ -105,7 +109,8 @@ export const LocationsView: React.FC<LocationsViewProps> = ({ onOpenBooking }) =
                 </a>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#F8F9FB] border border-black/5 space-y-1">
+              {/* Direct Phone */}
+              <div className="space-y-1 sm:border-l sm:border-slate-200/80 sm:pl-6">
                 <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
                   <Phone className="w-3.5 h-3.5 text-healis-blue shrink-0" />
                   <span>Direct Phone</span>
@@ -125,41 +130,50 @@ export const LocationsView: React.FC<LocationsViewProps> = ({ onOpenBooking }) =
               </div>
             </div>
 
+            {/* Line Separator */}
+            <div className="border-t border-slate-200/80 my-4 sm:my-5" />
+
             {/* Parking & Transit */}
-            <div className="p-4 rounded-2xl bg-[#F8F9FB] border border-black/5 flex items-start gap-3">
+            <div className="flex items-start gap-3">
               <Car className="w-4 h-4 text-healis-blue mt-0.5 shrink-0" />
               <div className="space-y-0.5">
                 <div className="text-xs font-semibold text-healis-dark">Parking &amp; Transit</div>
-                <div className="text-xs text-healis-grey font-normal leading-relaxed">
+                <div className="text-xs sm:text-sm text-healis-grey font-normal leading-relaxed">
                   {selectedClinic.parking}
                 </div>
               </div>
             </div>
 
+            {/* Line Separator */}
+            <div className="border-t border-slate-200/80 my-4 sm:my-5" />
+
             {/* Operating Hours */}
-            <div className="space-y-1.5">
+            <div className="space-y-2">
               <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 text-healis-blue shrink-0" />
                 <span>Operating Hours</span>
               </div>
-              <div className="grid grid-cols-3 gap-2 text-[11px]">
-                <div className="p-2.5 rounded-xl bg-[#F8F9FB] border border-black/5 text-center">
+              <div className="grid grid-cols-3 gap-4 text-xs sm:text-sm divide-x divide-slate-200/80 pt-1">
+                <div>
                   <span className="text-slate-400 block text-[10px] uppercase font-semibold">Mon–Thu</span>
                   <span className="font-medium text-healis-dark block mt-0.5">{selectedClinic.hours.weekdays.replace('AM', 'am').replace('PM', 'pm')}</span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-[#F8F9FB] border border-black/5 text-center">
+                <div className="pl-4">
                   <span className="text-slate-400 block text-[10px] uppercase font-semibold">Friday</span>
                   <span className="font-medium text-healis-dark block mt-0.5">{selectedClinic.hours.friday.replace('AM', 'am').replace('PM', 'pm')}</span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-[#F8F9FB] border border-black/5 text-center">
+                <div className="pl-4">
                   <span className="text-slate-400 block text-[10px] uppercase font-semibold">Saturday</span>
                   <span className="font-medium text-healis-dark block mt-0.5">{selectedClinic.hours.saturday.replace('AM', 'am').replace('PM', 'pm')}</span>
                 </div>
               </div>
             </div>
 
+            {/* Line Separator */}
+            <div className="border-t border-slate-200/80 my-4 sm:my-5" />
+
             {/* Booking Action Button */}
-            <div className="pt-2">
+            <div className="pt-1">
               <button
                 type="button"
                 onClick={onOpenBooking}

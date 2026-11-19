@@ -83,8 +83,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking }) => {
 
           <div className="lg:col-span-6 aspect-[4/3] rounded-3xl overflow-hidden bg-slate-100 shadow-xl border-4 border-white">
             <img
-              src="https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/05/our-team-The-Healthy-Body-2304035597.jpg"
-              alt="The Healthy Body Company Team"
+              src="https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Physiotherapy-in-Penrith-scaled-e1761877313120.jpg"
+              alt="The Healthy Body Company Practice & Rehab Gym"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
             />
           </div>

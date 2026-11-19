@@ -157,8 +157,10 @@ export const CareersView: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="rounded-[2rem] overflow-hidden aspect-[4/3.6] shadow-md border border-black/5 bg-slate-100">
               <img
-                src="https://www.thehealthybodycompany.com.au/wp-content/uploads/2024/05/our-team-The-Healthy-Body-2304035597.jpg"
-                alt="The Healthy Body Company clinical team"
+                src="https://www.thehealthybodycompany.com.au/wp-content/uploads/2025/10/Physiotherapy-in-Penrith-scaled-e1761877313120.jpg"
+                alt="The Healthy Body Company practice and clinical facilities"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
