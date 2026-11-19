@@ -18,7 +18,7 @@ interface Message {
   };
 }
 
-const DOCTOR_AVATAR = 'https://www.thehealthybodycompany.com.au/wp-content/uploads/2026/11/emily-brown-1.png';
+const DOCTOR_AVATAR = '/images/physiotherapist-avatar.webp';
 
 export const ChatWidget: React.FC<ChatWidgetProps> = ({ onOpenBooking, onNavigateTab }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ onOpenBooking, onNavigat
     {
       id: 'welcome-1',
       sender: 'bot',
-      text: "Hello! 👋 I'm Emily from The Healthy Body Company. How can I help you today?",
+      text: "Hello! 👋 Welcome to The Healthy Body Company. I'm here to help with your appointments, clinics, or recovery questions.",
       timestamp: 'Just now',
     },
   ]);
@@ -159,7 +159,7 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ onOpenBooking, onNavigat
           {/* Doctor Portrait Image */}
           <img
             src={DOCTOR_AVATAR}
-            alt="Dr. Emily Brown - Physiotherapist"
+            alt="The Healthy Body Company Physiotherapist"
             className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110"
           />
 
@@ -204,12 +204,12 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ onOpenBooking, onNavigat
               <div className="flex items-center gap-3">
                 <img
                   src={DOCTOR_AVATAR}
-                  alt="Emily Brown"
+                  alt="The Healthy Body Physiotherapist"
                   className="w-11 h-11 rounded-full object-cover object-top border-2 border-[#38bdf8] bg-slate-800 shrink-0"
                 />
                 <div>
                   <h3 className="font-semibold text-sm text-white leading-tight">
-                    Emily • Clinical Support
+                    Clinical Care Team
                   </h3>
                   <div className="flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium mt-0.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
