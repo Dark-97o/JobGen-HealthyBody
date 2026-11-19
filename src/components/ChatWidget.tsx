@@ -149,43 +149,46 @@ export const ChatWidget: React.FC<ChatWidgetProps> = ({ onOpenBooking, onNavigat
     <>
       {/* Floating Circular Trigger Button at Bottom Right with Female Doctor Avatar */}
       <div className="fixed bottom-6 right-6 z-40 sm:bottom-7 sm:right-7">
-        <button
-          type="button"
-          onClick={() => setIsOpen((prev) => !prev)}
-          className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 group focus:outline-none ring-3 ring-white border border-black/10 overflow-hidden bg-slate-100"
-          aria-label={isOpen ? 'Close chat' : 'Chat with Emily from The Healthy Body Company'}
-          title={isOpen ? 'Close chat' : 'Chat with Emily from The Healthy Body Company'}
-        >
-          {/* Doctor Portrait Image */}
-          <img
-            src={DOCTOR_AVATAR}
-            alt="The Healthy Body Company Physiotherapist"
-            className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110"
-          />
+        <div className="relative group">
+          <button
+            type="button"
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none ring-3 ring-white border border-black/10 overflow-hidden bg-slate-100"
+            aria-label={isOpen ? 'Close chat' : 'Chat with clinic assistant'}
+            title={isOpen ? 'Close chat' : 'Chat with clinic assistant'}
+          >
+            {/* Doctor Portrait Image */}
+            <img
+              src={DOCTOR_AVATAR}
+              alt="The Healthy Body Company Physiotherapist"
+              className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110"
+            />
 
-          {/* Close icon overlay when open */}
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.15 }}
-                className="absolute inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center text-white"
-              >
-                <X className="w-6 h-6 stroke-[2.5]" />
-              </motion.div>
-            )}
-          </AnimatePresence>
+            {/* Close icon overlay when open */}
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center text-white"
+                >
+                  <X className="w-6 h-6 stroke-[2.5]" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </button>
 
-          {/* Green Live Online Dot */}
+          {/* Green Live Online Dot - Positioned Over the Circle Edge Without Clipping */}
           <span
-            className="absolute top-0.5 right-0.5 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white shadow-sm flex items-center justify-center z-10"
+            className="absolute -top-0.5 -right-0.5 w-4 h-4 sm:w-4.5 sm:h-4.5 bg-emerald-500 rounded-full border-2 border-white shadow-md flex items-center justify-center z-50 pointer-events-none"
             title="Online"
+            aria-hidden="true"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
           </span>
-        </button>
+        </div>
       </div>
 
       {/* Floating Chat Box Window */}
