@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Check, MapPin, Phone, Building2 } from 'lucide-react';
 
@@ -14,9 +14,34 @@ export const InteractiveCardsSection: React.FC<InteractiveCardsSectionProps> = (
   onSelectLocations,
 }) => {
   const [showLocations, setShowLocations] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const video1Ref = useRef<HTMLVideoElement>(null);
+  const video2Ref = useRef<HTMLVideoElement>(null);
+
+  // Graphic Load Balancing: Pause background cards videos when section is offscreen
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video1Ref.current?.play().catch(() => {});
+          video2Ref.current?.play().catch(() => {});
+        } else {
+          video1Ref.current?.pause();
+          video2Ref.current?.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="relative py-20 sm:py-24 lg:py-28 bg-[#F8F9FB] overflow-hidden">
+    <section ref={sectionRef} className="relative py-20 sm:py-24 lg:py-28 bg-[#F8F9FB] overflow-hidden graphic-load-balanced">
       {/* Brand Red Accent on Screen Left Edge */}
       <div
         className="absolute left-0 top-1/2 -translate-y-1/2 w-4 sm:w-6 lg:w-8 h-40 sm:h-52 lg:h-60 rounded-r-2xl bg-[#E53935] pointer-events-none z-0 opacity-80"
@@ -77,13 +102,14 @@ export const InteractiveCardsSection: React.FC<InteractiveCardsSectionProps> = (
                         className="w-full h-full relative"
                       >
                         <video
+                          ref={video1Ref}
                           src="/hero1.mp4"
                           autoPlay
                           loop
                           muted
                           playsInline
                           preload="metadata"
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 will-change-transform"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                         <div className="absolute bottom-5 left-5 right-5 text-white">
@@ -329,13 +355,14 @@ export const InteractiveCardsSection: React.FC<InteractiveCardsSectionProps> = (
                         className="w-full h-full relative"
                       >
                         <video
+                          ref={video2Ref}
                           src="/hero2.mp4"
                           autoPlay
                           loop
                           muted
                           playsInline
                           preload="metadata"
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 will-change-transform"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                         <div className="absolute bottom-5 left-5 right-5 text-white">

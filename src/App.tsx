@@ -1,4 +1,6 @@
-import React, { useState, lazy, Suspense } from 'react';
+import React, { useState, useRef, useEffect, lazy, Suspense } from 'react';
+import Lenis from 'lenis';
+import 'lenis/dist/lenis.css';
 import { Navbar } from './components/Navbar';
 import { HomeView } from './views/HomeView';
 import { Footer } from './components/Footer';
@@ -43,16 +45,59 @@ export const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<string>('home');
   const [selectedServiceId, setSelectedServiceId] = useState<string>('physiotherapy-treatment');
   const [isBookingOpen, setIsBookingOpen] = useState<boolean>(false);
+  const lenisRef = useRef<Lenis | null>(null);
+
+  // Initialize Frictionless Inertial Smooth Scrolling
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      touchMultiplier: 1.4,
+    });
+    lenisRef.current = lenis;
+
+    let rafId: number;
+    function raf(time: number) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, []);
+
+  // Balance scroll physics when modal opens/closes
+  useEffect(() => {
+    if (!lenisRef.current) return;
+    if (isBookingOpen) {
+      lenisRef.current.stop();
+    } else {
+      lenisRef.current.start();
+    }
+  }, [isBookingOpen]);
 
   const handleSelectTab = (tab: string) => {
     setCurrentTab(tab);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
   };
 
   const handleSelectService = (serviceId: string) => {
     setSelectedServiceId(serviceId);
     setCurrentTab('service-detail');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
   };
 
   return (

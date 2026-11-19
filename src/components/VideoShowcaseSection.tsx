@@ -1,18 +1,41 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 export const VideoShowcaseSection: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Graphic Load Balancing: Pause video when scrolled out of viewport
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative w-full h-[80vh] min-h-[540px] max-h-[860px] overflow-hidden bg-slate-900">
-      {/* Full-Width Background Video */}
+    <section className="relative w-full h-[80vh] min-h-[540px] max-h-[860px] overflow-hidden bg-slate-900 graphic-load-balanced">
+      {/* Full-Width Background Video with Graphic Load Balancing */}
       <video
+        ref={videoRef}
         src="/vido.mp4"
         autoPlay
         loop
         muted
         playsInline
         preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover -scale-x-100"
+        className="absolute inset-0 w-full h-full object-cover -scale-x-100 will-change-transform"
       />
 
       {/* Subtle Dark Scrim for Glass Card Readability */}

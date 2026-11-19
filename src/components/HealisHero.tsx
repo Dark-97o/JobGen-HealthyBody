@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -11,17 +11,40 @@ export const HealisHero: React.FC<HealisHeroProps> = ({
   onOpenBooking,
   onExploreServices,
 }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Graphic Load Balancing: Pause video when scrolled out of viewport
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen w-full flex flex-col justify-end overflow-hidden bg-black">
-      {/* Full Background Video */}
+      {/* Full Background Video with Graphic Load Balancing */}
       <video
+        ref={videoRef}
         src="/heronew.mp4"
         autoPlay
         loop
         muted
         playsInline
         preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover object-center z-0"
+        className="absolute inset-0 w-full h-full object-cover object-center z-0 will-change-transform"
       />
 
       {/* Cinematic Gradient Overlay for Maximum Readability */}

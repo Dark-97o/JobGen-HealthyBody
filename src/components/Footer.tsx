@@ -34,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab, onOpenBooking, isHo
       {/* Scenic Mountain Landscape & Family Silhouette Background */}
       <div
         className="absolute inset-0 bg-no-repeat bg-top bg-cover pointer-events-none"
-        style={{ backgroundImage: `url('/images/footer-landscape-hd.jpg')` }}
+        style={{ backgroundImage: `url('/images/footer-landscape-hd.webp')` }}
       />
 
       {/* Top Blend Overlay for Sub-Pages (Seamlessly melts with the previous section's #F8F9FB background) */}
